@@ -1,0 +1,81 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase>
+    a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase/1.0> ;
+    owl:versionInfo "1.0" ;
+    dct:title "Controlled Vocabulary of Property Classification for Spanish Cadastre"@en ;
+    dct:title "Vocabulario Controlado de Clasificación de Inmuebles para el Catastro Español"@es ;
+    dct:description "SKOS concept scheme defining the controlled vocabulary of property classification (urban/rural) in the Spanish Cadastre system."@en ;
+    dct:description "Esquema de conceptos SKOS que define el vocabulario controlado de clasificación de inmuebles (urbano/rústico) en el sistema del Catastro Español."@es ;
+    dct:creator "EDINT" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:source <https://www.sedecatastro.gob.es> ;
+    rdfs:comment "This vocabulary is used in the Spanish Cadastre Ontology to classify properties as urban or rural."@en ;
+    rdfs:comment "Este vocabulario se utiliza en la Ontología del Catastro Español para clasificar inmuebles como urbanos o rústicos."@es ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase#" ;
+    vann:preferredNamespacePrefix "clase" .
+
+# =============================================================================
+# CONCEPT SCHEME
+# =============================================================================
+
+:ClassificationScheme
+    a skos:ConceptScheme ;
+    rdfs:label "Property Classification Scheme"@en ;
+    rdfs:label "Esquema de Clasificación de Inmuebles"@es ;
+    rdfs:comment "Controlled vocabulary of property classification in the Spanish Cadastre."@en ;
+    rdfs:comment "Vocabulario controlado de clasificación de inmuebles en el Catastro Español."@es ;
+    skos:prefLabel "Clasificación"@es ;
+    skos:prefLabel "Classification"@en .
+
+# =============================================================================
+# PROPERTY CLASSIFICATION
+# =============================================================================
+
+:Urban
+    a skos:Concept ;
+    skos:inScheme :ClassificationScheme ;
+    skos:prefLabel "Urban"@en ;
+    skos:prefLabel "Urbano"@es ;
+    skos:definition "Property located in urbanized areas with urban infrastructure and services."@en ;
+    skos:definition "Inmueble ubicado en zonas urbanizadas con infraestructura y servicios urbanos."@es ;
+    skos:topConceptOf :ClassificationScheme .
+
+:Rural
+    a skos:Concept ;
+    skos:inScheme :ClassificationScheme ;
+    skos:prefLabel "Rural"@en ;
+    skos:prefLabel "Rústico"@es ;
+    skos:definition "Property located in non-urbanized areas, typically agricultural, natural, or with limited infrastructure."@en ;
+    skos:definition "Inmueble ubicado en zonas no urbanizadas, típicamente agrícola, natural o con infraestructura limitada."@es ;
+    skos:topConceptOf :ClassificationScheme .
+
+:Mixed
+    a skos:Concept ;
+    skos:inScheme :ClassificationScheme ;
+    skos:prefLabel "Mixed"@en ;
+    skos:prefLabel "Mixto"@es ;
+    skos:definition "Property with characteristics of both urban and rural areas, or in transition zones."@en ;
+    skos:definition "Inmueble con características tanto de zonas urbanas como rurales, o en zonas de transición."@es ;
+    skos:topConceptOf :ClassificationScheme .
+
+:Special
+    a skos:Concept ;
+    skos:inScheme :ClassificationScheme ;
+    skos:prefLabel "Special"@en ;
+    skos:prefLabel "Especial"@es ;
+    skos:definition "Property with special characteristics not fitting standard urban/rural classification, such as industrial zones, ports, or protected areas."@en ;
+    skos:definition "Inmueble con características especiales que no encajan en la clasificación estándar urbano/rústico, como zonas industriales, puertos o áreas protegidas."@es ;
+    skos:topConceptOf :ClassificationScheme .

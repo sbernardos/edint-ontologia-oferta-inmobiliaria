@@ -1,0 +1,135 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado>
+    a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado/1.0> ;
+    owl:versionInfo "1.0" ;
+    dct:title "Controlled Vocabulary of Construction Conditions for Spanish Cadastre"@en ;
+    dct:title "Vocabulario Controlado de Estados de Construcción para el Catastro Español"@es ;
+    dct:description "SKOS concept scheme defining the controlled vocabulary of construction conditions in the Spanish Cadastre system."@en ;
+    dct:description "Esquema de conceptos SKOS que define el vocabulario controlado de estados de construcción en el sistema del Catastro Español."@es ;
+    dct:creator "EDINT" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:source <https://www.sedecatastro.gob.es> ;
+    rdfs:comment "This vocabulary is used in the Spanish Cadastre Ontology to classify the conservation state of constructions."@en ;
+    rdfs:comment "Este vocabulario se utiliza en la Ontología del Catastro Español para clasificar el estado de conservación de construcciones."@es ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado#" ;
+    vann:preferredNamespacePrefix "estado" .
+
+# =============================================================================
+# CONCEPT SCHEME
+# =============================================================================
+
+:ConditionScheme
+    a skos:ConceptScheme ;
+    rdfs:label "Condition Concept Scheme"@en ;
+    rdfs:label "Esquema de Conceptos de Estados"@es ;
+    rdfs:comment "Controlled vocabulary of construction conservation states in the Spanish Cadastre."@en ;
+    rdfs:comment "Vocabulario controlado de estados de conservación de construcciones en el Catastro Español."@es ;
+    skos:prefLabel "Estado"@es ;
+    skos:prefLabel "Condition"@en .
+
+# =============================================================================
+# CONSTRUCTION CONDITIONS
+# =============================================================================
+
+:Functional
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Functional"@en ;
+    skos:prefLabel "Funcional"@es ;
+    skos:definition "Construction that is in good condition and fully operational for its intended use."@en ;
+    skos:definition "Construcción que está en buen estado y completamente operativa para su uso previsto."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Deteriorated
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Deteriorated"@en ;
+    skos:prefLabel "Deteriorado"@es ;
+    skos:definition "Construction that shows signs of wear, damage, or decay but is still usable."@en ;
+    skos:definition "Construcción que muestra signos de desgaste, daño o deterioro pero que sigue siendo usable."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Ruined
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Ruined"@en ;
+    skos:prefLabel "Ruinoso"@es ;
+    skos:definition "Construction that is in a state of ruin, severely damaged or partially collapsed, not suitable for use."@en ;
+    skos:definition "Construcción que está en estado de ruina, gravemente dañada o parcialmente colapsada, no apta para uso."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:UnderConstruction
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Under Construction"@en ;
+    skos:prefLabel "En Construcción"@es ;
+    skos:definition "Construction that is currently being built and is not yet completed."@en ;
+    skos:definition "Construcción que está actualmente en construcción y aún no está completada."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Demolished
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Demolished"@en ;
+    skos:prefLabel "Demolido"@es ;
+    skos:definition "Construction that has been demolished or destroyed."@en ;
+    skos:definition "Construcción que ha sido demolida o destruida."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Renovated
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Renovated"@en ;
+    skos:prefLabel "Reformado"@es ;
+    skos:definition "Construction that has undergone significant renovation or rehabilitation."@en ;
+    skos:definition "Construcción que ha sufrido una reforma o rehabilitación significativa."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:InUse
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "In Use"@en ;
+    skos:prefLabel "En Uso"@es ;
+    skos:definition "Construction that is currently in active use."@en ;
+    skos:definition "Construcción que está actualmente en uso activo."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Vacant
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Vacant"@en ;
+    skos:prefLabel "Vacío"@es ;
+    skos:definition "Construction that is not currently occupied or in use."@en ;
+    skos:definition "Construcción que no está actualmente ocupada o en uso."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Protected
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Protected"@en ;
+    skos:prefLabel "Protegido"@es ;
+    skos:definition "Construction that has protected status due to historical, cultural, or architectural value."@en ;
+    skos:definition "Construcción que tiene estatus protegido debido a su valor histórico, cultural o arquitectónico."@es ;
+    skos:topConceptOf :ConditionScheme .
+
+:Abandoned
+    a skos:Concept ;
+    skos:inScheme :ConditionScheme ;
+    skos:prefLabel "Abandoned"@en ;
+    skos:prefLabel "Abandonado"@es ;
+    skos:definition "Construction that has been abandoned and is no longer maintained."@en ;
+    skos:definition "Construcción que ha sido abandonada y ya no se mantiene."@es ;
+    skos:topConceptOf :ConditionScheme .

@@ -1,0 +1,213 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso>
+    a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso/1.0> ;
+    owl:versionInfo "1.0" ;
+    dct:title "Controlled Vocabulary of Uses for Spanish Cadastre"@en ;
+    dct:title "Vocabulario Controlado de Usos para el Catastro Español"@es ;
+    dct:description "SKOS concept scheme defining the controlled vocabulary of uses for properties and constructions in the Spanish Cadastre system."@en ;
+    dct:description "Esquema de conceptos SKOS que define el vocabulario controlado de usos para inmuebles y construcciones en el sistema del Catastro Español."@es ;
+    dct:creator "EDINT" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:source <https://www.sedecatastro.gob.es> ;
+    rdfs:comment "This vocabulary is used in the Spanish Cadastre Ontology to classify the main use of properties and constructions."@en ;
+    rdfs:comment "Este vocabulario se utiliza en la Ontología del Catastro Español para clasificar el uso principal de inmuebles y construcciones."@es ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso#" ;
+    vann:preferredNamespacePrefix "uso" .
+
+# =============================================================================
+# CONCEPT SCHEME
+# =============================================================================
+
+:UseScheme
+    a skos:ConceptScheme ;
+    rdfs:label "Use Concept Scheme"@en ;
+    rdfs:label "Esquema de Conceptos de Usos"@es ;
+    rdfs:comment "Controlled vocabulary of property and construction uses in the Spanish Cadastre."@en ;
+    rdfs:comment "Vocabulario controlado de usos de inmuebles y construcciones en el Catastro Español."@es ;
+    skos:prefLabel "Uso"@es ;
+    skos:prefLabel "Use"@en .
+
+# =============================================================================
+# MAIN CATEGORIES
+# =============================================================================
+
+# Land classification
+:Urban
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Urban"@en ;
+    skos:prefLabel "Urbano"@es ;
+    skos:definition "Land or property located in urbanized areas with urban infrastructure."@en ;
+    skos:definition "Terreno o inmueble ubicado en zonas urbanizadas con infraestructura urbana."@es ;
+    skos:topConceptOf :UseScheme .
+
+:Rural
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Rural"@en ;
+    skos:prefLabel "Rústico"@es ;
+    skos:definition "Land or property located in non-urbanized areas, typically agricultural or natural."@en ;
+    skos:definition "Terreno o inmueble ubicado en zonas no urbanizadas, típicamente agrícola o natural."@es ;
+    skos:topConceptOf :UseScheme .
+
+# Property use classification
+:Residential
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Residential"@en ;
+    skos:prefLabel "Residencial"@es ;
+    skos:definition "Property used for dwelling or housing purposes."@en ;
+    skos:definition "Inmueble utilizado para fines de vivienda o alojamiento."@es ;
+    skos:broader :Urban .
+
+:Commercial
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Commercial"@en ;
+    skos:prefLabel "Comercial"@es ;
+    skos:definition "Property used for commercial activities, retail, or business purposes."@en ;
+    skos:definition "Inmueble utilizado para actividades comerciales, venta al por menor o fines empresariales."@es ;
+    skos:broader :Urban .
+
+:Industrial
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Industrial"@en ;
+    skos:prefLabel "Industrial"@es ;
+    skos:definition "Property used for manufacturing, production, warehousing, or industrial activities."@en ;
+    skos:definition "Inmueble utilizado para fabricación, producción, almacenamiento o actividades industriales."@es ;
+    skos:broader :Urban .
+
+:Facilities
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Facilities"@en ;
+    skos:prefLabel "Dotacional"@es ;
+    skos:definition "Property used for public or community facilities, such as schools, hospitals, or government buildings."@en ;
+    skos:definition "Inmueble utilizado para instalaciones públicas o comunitarias, como escuelas, hospitales o edificios gubernamentales."@es ;
+    skos:broader :Urban .
+
+:Agricultural
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Agricultural"@en ;
+    skos:prefLabel "Agrícola"@es ;
+    skos:definition "Land used for farming, crop production, or agricultural activities."@en ;
+    skos:definition "Tierra utilizada para la agricultura, producción de cultivos o actividades agrícolas."@es ;
+    skos:broader :Rural .
+
+:Services
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Services"@en ;
+    skos:prefLabel "Servicios"@es ;
+    skos:definition "Property used for service provision, such as offices, banks, or professional services."@en ;
+    skos:definition "Inmueble utilizado para la prestación de servicios, como oficinas, bancos o servicios profesionales."@es ;
+    skos:broader :Urban .
+
+:Mixed
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Mixed Use"@en ;
+    skos:prefLabel "Mixto"@es ;
+    skos:definition "Property that combines two or more different uses, such as residential and commercial."@en ;
+    skos:definition "Inmueble que combina dos o más usos diferentes, como residencial y comercial."@es ;
+    skos:topConceptOf :UseScheme .
+
+# =============================================================================
+# ADDITIONAL SPECIFIC USES (Optional, can be expanded)
+# =============================================================================
+
+:Tourism
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Tourism"@en ;
+    skos:prefLabel "Turístico"@es ;
+    skos:definition "Property used for tourism-related activities, such as hotels or tourist apartments."@en ;
+    skos:definition "Inmueble utilizado para actividades relacionadas con el turismo, como hoteles o apartamentos turísticos."@es ;
+    skos:broader :Commercial .
+
+:Religious
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Religious"@en ;
+    skos:prefLabel "Religioso"@es ;
+    skos:definition "Property used for religious activities, such as churches, temples, or mosques."@en ;
+    skos:definition "Inmueble utilizado para actividades religiosas, como iglesias, templos o mezquitas."@es ;
+    skos:broader :Facilities .
+
+:Transport
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Transport"@en ;
+    skos:prefLabel "Transporte"@es ;
+    skos:definition "Property used for transportation infrastructure, such as stations, airports, or ports."@en ;
+    skos:definition "Inmueble utilizado para infraestructura de transporte, como estaciones, aeropuertos o puertos."@es ;
+    skos:broader :Facilities .
+
+:GreenSpace
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Green Space"@en ;
+    skos:prefLabel "Espacio Verde"@es ;
+    skos:definition "Land designated for parks, gardens, or natural areas."@en ;
+    skos:definition "Terreno designado para parques, jardines o áreas naturales."@es ;
+    skos:broader :Urban .
+
+:Cultural
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Cultural"@en ;
+    skos:prefLabel "Cultural"@es ;
+    skos:definition "Property used for cultural activities, such as museums, theaters, libraries, or cultural centers."@en ;
+    skos:definition "Inmueble utilizado para actividades culturales, como museos, teatros, bibliotecas o centros culturales."@es ;
+    skos:broader :Facilities .
+
+:Educational
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Educational"@en ;
+    skos:prefLabel "Educativo"@es ;
+    skos:definition "Property used for educational purposes, such as schools, universities, training centers, or research facilities."@en ;
+    skos:definition "Inmueble utilizado para fines educativos, como escuelas, universidades, centros de formación o instalaciones de investigación."@es ;
+    skos:broader :Facilities .
+
+:Storage
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Storage"@en ;
+    skos:prefLabel "Almacenamiento"@es ;
+    skos:definition "Property used for storage purposes, such as warehouses, storage facilities, or depositories."@en ;
+    skos:definition "Inmueble utilizado para fines de almacenamiento, como almacenes, instalaciones de almacenamiento o depósitos."@es ;
+    skos:broader :Industrial .
+
+ :Parking
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Parking"@en ;
+    skos:prefLabel "Aparcamiento"@es ;
+    skos:definition "Property used for parking vehicles, such as parking lots, garages, or parking structures."@en ;
+    skos:definition "Inmueble utilizado para aparcar vehículos, como aparcamientos, garajes o estructuras de aparcamiento."@es ;
+    skos:broader :Services .
+
+:Sports
+    a skos:Concept ;
+    skos:inScheme :UseScheme ;
+    skos:prefLabel "Sports"@en ;
+    skos:prefLabel "Deportivo"@es ;
+    skos:definition "Property used for sports activities, such as stadiums, gyms, sports centers, or athletic facilities."@en ;
+    skos:definition "Inmueble utilizado para actividades deportivas, como estadios, gimnasios, centros deportivos o instalaciones atléticas."@es ;
+    skos:broader :Facilities .

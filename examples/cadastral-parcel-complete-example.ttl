@@ -1,0 +1,725 @@
+@prefix : <https://edint.github.io/edint-ontologia-inmuebles/examples#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix time: <http://www.w3.org/2006/03/time#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
+@prefix uso: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso#> .
+@prefix estado: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado#> .
+@prefix clase: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase#> .
+@prefix catastro: <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtunit: <http://qudt.org/vocab/unit/> .
+
+# =============================================================================
+# EXAMPLE: Cadastral Parcel 8942103VK2793
+# =============================================================================
+# Data from 8942103VK2793S0001UO.pdf
+# =============================================================================
+
+# --- Cadastral Parcel ---
+
+:Parcela_8942103VK2793
+    a catastro:CadastralParcel ;
+    rdfs:label "Parcela 8942103VK2793"@es ;
+    rdfs:label "Parcel 8942103VK2793"@en ;
+    catastro:hasCadastralReference :RefCatastral_8942103VK2793_Parcela ;
+    catastro:hasCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:hasClass clase:Urban ;
+    dct:source <https://www.sedecatastro.gob.es> .
+
+:RefCatastral_8942103VK2793_Parcela
+    a catastro:CadastralReference ;
+    catastro:parcelReference "8942103VK2793" .
+
+# Geometry for the parcel
+:Geometria_Parcela_8942103VK2793
+    a geo:Geometry ;
+    geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/25830> polygon((430000.00 4470000.00, 430000.00 4470400.00, 430400.00 4470400.00, 430400.00 4470000.00, 430000.00 4470000.00))"^^geo:wktLiteral ;
+    geo:hasSerialization "GML geometry from INSPIRE Cadastral Parcels" .
+    # Area: 407.586 m²
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "407.586"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+# --- Address using callejero ontology ---
+
+# Create address entities according to callejero ontology
+:Via_BADAJOZ
+    a callejero:Via ;
+    rdfs:label "Calle Badajoz"@es ;
+    callejero:nombreVia "BADAJOZ" ;
+    callejero:tipoVia "CL" .  # CL = Calle
+
+:Portal_348B
+    a callejero:Portal ;
+    rdfs:label "Portal 348[B]"@es ;
+    callejero:numero "348" ;
+    callejero:codigoPostal "28223" ;
+    callejero:municipio "POZUELO DE ALARCÓN" ;
+    callejero:provincia "MADRID" ;
+    callejero:via :Via_BADAJOZ .
+
+# --- Property (Inmueble) ---
+
+:Inmueble_8942103VK2793S0001UO
+    a catastro:CadastralProperty ;
+    rdfs:label "Inmueble 0001UO"@es ;
+    rdfs:label "Cadastral Property 0001UO"@en ;
+    catastro:hasCadastralReference :RefCatastral_8942103VK2793S0001UO_Property ;
+    catastro:participation "100.00"^^xsd:decimal ;
+    catastro:onCadastralParcel :Parcela_8942103VK2793 ;
+    catastro:hasUse uso:Cultural ;
+    catastro:hasClass clase:Urban ;
+    catastro:hasAddress :Portal_348B ;
+    # Link to ALL constructions
+    catastro:hasCadastralConstruction :Construccion_3_n2_01, :Construccion_3_n2_02, :Construccion_4_n2_01, :Construccion_4_n2_02, :Construccion_4_n2_03, :Construccion_4_n2_04, :Construccion_5_n2_01, :Construccion_5_n2_02, :Construccion_5_n2_03, :Construccion_6_n2_01, :Construccion_7_n2_01, :Construccion_1_n1_01, :Construccion_2_n1_01, :Construccion_2_n1_02, :Construccion_3_n1_01, :Construccion_4_n1_01, :Construccion_4_n1_02, :Construccion_4_n1_03, :Construccion_4_n1_04, :Construccion_5_n1_01, :Construccion_5_n1_02, :Construccion_6_n1_01, :Construccion_6_n1_02, :Construccion_7_n1_01, :Construccion_8_n1_01, :Construccion_8_n1_02, :Construccion_1_00_01, :Construccion_1_00_02, :Construccion_2_00_01, :Construccion_3_00_01 ;
+    dct:source <https://www.sedecatastro.gob.es> .
+
+:RefCatastral_8942103VK2793S0001UO_Property
+    a catastro:CadastralReference ;
+    catastro:parcelReference "8942103VK2793" ;
+    catastro:propertyReference "0001UO" .
+
+# =============================================================================
+# CADASTRAL CONSTRUCTIONS (ALL 30 constructions)
+# =============================================================================
+
+:Construccion_3_n2_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 3/-2/01"@es ;
+    rdfs:label "ALMACEN 3/-2/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "3" ;
+    catastro:floor "-2" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_3_n2_01 .
+
+:Geometria_3_n2_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "232.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_3_n2_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 3/-2/02"@es ;
+    rdfs:label "ENSEÑANZA 3/-2/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "3" ;
+    catastro:floor "-2" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_3_n2_02 .
+
+:Geometria_3_n2_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.335"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n2_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 4/-2/01"@es ;
+    rdfs:label "ALMACEN 4/-2/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-2" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_4_n2_01 .
+
+:Geometria_4_n2_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "66.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n2_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "APARCAMIENTO 4/-2/02"@es ;
+    rdfs:label "APARCAMIENTO 4/-2/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Parking ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-2" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_4_n2_02 .
+
+:Geometria_4_n2_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.408"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n2_03
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 4/-2/03"@es ;
+    rdfs:label "ENSEÑANZA 4/-2/03"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-2" ;
+    catastro:door "03" ;
+    catastro:hasGeometry :Geometria_4_n2_03 .
+
+:Geometria_4_n2_03
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.224"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n2_04
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 4/-2/04"@es ;
+    rdfs:label "ENSEÑANZA 4/-2/04"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-2" ;
+    catastro:door "04" ;
+    catastro:hasGeometry :Geometria_4_n2_04 .
+
+:Geometria_4_n2_04
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "81.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_5_n2_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 5/-2/01"@es ;
+    rdfs:label "ALMACEN 5/-2/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "5" ;
+    catastro:floor "-2" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_5_n2_01 .
+
+:Geometria_5_n2_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "218.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_5_n2_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "APARCAMIENTO 5/-2/02"@es ;
+    rdfs:label "APARCAMIENTO 5/-2/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Parking ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "5" ;
+    catastro:floor "-2" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_5_n2_02 .
+
+:Geometria_5_n2_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "798.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_5_n2_03
+    a catastro:CadastralConstruction ;
+    rdfs:label "SOPORT. 50% 5/-2/03"@es ;
+    rdfs:label "SOPORT. 50% 5/-2/03"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "5" ;
+    catastro:floor "-2" ;
+    catastro:door "03" ;
+    catastro:supportPercentage "50.00"^^xsd:decimal ;
+    catastro:hasGeometry :Geometria_5_n2_03 .
+
+:Geometria_5_n2_03
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "21.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_6_n2_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 6/-2/01"@es ;
+    rdfs:label "ALMACEN 6/-2/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "6" ;
+    catastro:floor "-2" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_6_n2_01 .
+
+:Geometria_6_n2_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "450.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_7_n2_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 7/-2/01"@es ;
+    rdfs:label "ENSEÑANZA 7/-2/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "7" ;
+    catastro:floor "-2" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_7_n2_01 .
+
+:Geometria_7_n2_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "570.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_1_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 1/-1/01"@es ;
+    rdfs:label "ALMACEN 1/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "1" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_1_n1_01 .
+
+:Geometria_1_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.022"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_2_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 2/-1/01"@es ;
+    rdfs:label "ALMACEN 2/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "2" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_2_n1_01 .
+
+:Geometria_2_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "113.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_2_n1_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 2/-1/02"@es ;
+    rdfs:label "ENSEÑANZA 2/-1/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "2" ;
+    catastro:floor "-1" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_2_n1_02 .
+
+:Geometria_2_n1_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "529.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_3_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 3/-1/01"@es ;
+    rdfs:label "ENSEÑANZA 3/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "3" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_3_n1_01 .
+
+:Geometria_3_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.587"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ALMACEN 4/-1/01"@es ;
+    rdfs:label "ALMACEN 4/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_4_n1_01 .
+
+:Geometria_4_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "110.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n1_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "APARCAMIENTO 4/-1/02"@es ;
+    rdfs:label "APARCAMIENTO 4/-1/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Parking ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-1" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_4_n1_02 .
+
+:Geometria_4_n1_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.410"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n1_03
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 4/-1/03"@es ;
+    rdfs:label "ENSEÑANZA 4/-1/03"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-1" ;
+    catastro:door "03" ;
+    catastro:hasGeometry :Geometria_4_n1_03 .
+
+:Geometria_4_n1_03
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.142"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_4_n1_04
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 4/-1/04"@es ;
+    rdfs:label "ENSEÑANZA 4/-1/04"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "4" ;
+    catastro:floor "-1" ;
+    catastro:door "04" ;
+    catastro:hasGeometry :Geometria_4_n1_04 .
+
+:Geometria_4_n1_04
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "81.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_5_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 5/-1/01"@es ;
+    rdfs:label "ENSEÑANZA 5/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "5" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_5_n1_01 .
+
+:Geometria_5_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "934.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_5_n1_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "SOPORT. 50% 5/-1/02"@es ;
+    rdfs:label "SOPORT. 50% 5/-1/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "5" ;
+    catastro:floor "-1" ;
+    catastro:door "02" ;
+    catastro:supportPercentage "50.00"^^xsd:decimal ;
+    catastro:hasGeometry :Geometria_5_n1_02 .
+
+:Geometria_5_n1_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "22.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_6_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "APARCAMIENTO 6/-1/01"@es ;
+    rdfs:label "APARCAMIENTO 6/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Parking ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "6" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_6_n1_01 .
+
+:Geometria_6_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "827.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_6_n1_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 6/-1/02"@es ;
+    rdfs:label "ENSEÑANZA 6/-1/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "6" ;
+    catastro:floor "-1" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_6_n1_02 .
+
+:Geometria_6_n1_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "450.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_7_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 7/-1/01"@es ;
+    rdfs:label "ENSEÑANZA 7/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "7" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_7_n1_01 .
+
+:Geometria_7_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "220.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_8_n1_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 8/-1/01"@es ;
+    rdfs:label "ENSEÑANZA 8/-1/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "8" ;
+    catastro:floor "-1" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_8_n1_01 .
+
+:Geometria_8_n1_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.843"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_8_n1_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 8/-1/02"@es ;
+    rdfs:label "ENSEÑANZA 8/-1/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "8" ;
+    catastro:floor "-1" ;
+    catastro:door "02" ;
+    catastro:hasGeometry :Geometria_8_n1_02 .
+
+:Geometria_8_n1_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "444.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_1_00_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 1/00/01"@es ;
+    rdfs:label "ENSEÑANZA 1/00/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "1" ;
+    catastro:floor "00" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_1_00_01 .
+
+:Geometria_1_00_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.351"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_1_00_02
+    a catastro:CadastralConstruction ;
+    rdfs:label "SOPORT. 50% 1/00/02"@es ;
+    rdfs:label "SOPORT. 50% 1/00/02"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Storage ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "1" ;
+    catastro:floor "00" ;
+    catastro:door "02" ;
+    catastro:supportPercentage "50.00"^^xsd:decimal ;
+    catastro:hasGeometry :Geometria_1_00_02 .
+
+:Geometria_1_00_02
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "42.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_2_00_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 2/00/01"@es ;
+    rdfs:label "ENSEÑANZA 2/00/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "2" ;
+    catastro:floor "00" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_2_00_01 .
+
+:Geometria_2_00_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "624.000"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
+
+:Construccion_3_00_01
+    a catastro:CadastralConstruction ;
+    rdfs:label "ENSEÑANZA 3/00/01"@es ;
+    rdfs:label "ENSEÑANZA 3/00/01"@en ;
+    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:hasUse uso:Educational ;
+    catastro:hasCondition estado:Functional ;
+    catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
+    catastro:staircase "3" ;
+    catastro:floor "00" ;
+    catastro:door "01" ;
+    catastro:hasGeometry :Geometria_3_00_01 .
+
+:Geometria_3_00_01
+    a geo:Geometry ;
+    geo:hasArea [
+         a geo:SpatialMeasure ;
+         geo:measureAmount "1.684"^^xsd:double ;
+         qudt:unit qudtunit:M2
+    ] .
