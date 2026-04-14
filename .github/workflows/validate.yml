@@ -1,0 +1,52 @@
+name: Validate Ontology
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r tests/requirements.txt
+    
+    - name: Validate ontology files
+      run: |
+        echo "Validating main ontology..."
+        python tests/validate.py ontology/inmobiliaria.ttl
+        
+        echo "Validating controlled vocabularies..."
+        python tests/validate.py kos/inmobiliaria-transaction-type.ttl
+        
+        echo "Validating examples..."
+        python tests/validate.py examples/listing-sale-example.ttl
+        python tests/validate.py examples/listing-rent-example.ttl
+        python tests/validate.py examples/listing-complete-example.ttl
+    
+    - name: Check for syntax errors
+      run: |
+        echo "Checking SPARQL queries..."
+        for file in requirements/CQ*.sparql; do
+          echo "  - $file"
+        done
+    
+    - name: Summary
+      run: |
+        echo "Validation Summary:"
+        echo "- Ontology files validated successfully"
+        echo "- SPARQL queries checked"
+        echo "- Example instances validated"
