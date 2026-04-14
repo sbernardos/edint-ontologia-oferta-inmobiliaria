@@ -8,9 +8,20 @@ El objetivo de este directorio es almacenar **materiales gráficos** que apoyen 
 
 # Contenidos
 
+## Diagramas
+
+### Diagrama del modelo conceptual (`diagrama-inmobiliaria.drawio`)
+
+- **Formato**: draw.io (editable) y PNG (visualización)
+- **Descripción**: Diagrama que muestra la clase principal de la ontología Inmobiliaria y sus relaciones.
+- **Clases mostradas**: RealEstateListing
+- **Relaciones**: propertyType, transactionType, refersToCadastralEntity, isActive, identifier
+
 Incluya cualquier archivo que represente o respalde el modelo conceptual de la ontología, como por ejemplo:
 
-- **Diagramas** ilustraciones de clases, relaciones y jerarquías. 
+- **Diagramas** ilustraciones de clases, relaciones y jerarquías.
+
+**Nota**: Los diagramas del catastro han sido movidos al repositorio separado [edint-ontologia-catastro](https://github.com/edint/edint-ontologia-catastro). 
 
 # Formatos aceptados
 

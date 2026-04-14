@@ -29,7 +29,7 @@
                     "Oscar Corcho" ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:imports <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro> ,
+    owl:imports <https://edint.github.io/edint-ontologia-catastro/ontology/catastro> ,
                 <http://www.opengis.net/ont/geosparql> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type> ;
@@ -103,11 +103,11 @@ edintinm:refersToCadastralEntity
     rdfs:domain edintinm:RealEstateListing ;
     rdfs:range [
         a owl:Class ;
-        owl:unionOf (<https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#CadastralParcel> <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#CadastralProperty>) ;
+        owl:unionOf (<https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel> <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty>) ;
     ] ;
     rdfs:comment "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en ;
     rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es ;
-    owl:inverseOf <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#hasListing> .
+    owl:inverseOf <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing> .
 
 # =============================================================================
 # DATA PROPERTIES

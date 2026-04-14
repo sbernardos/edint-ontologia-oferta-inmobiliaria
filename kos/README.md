@@ -21,12 +21,10 @@ Incluya recursos en los siguientes formatos:
 
 | Archivo | ConceptScheme | Prefijo | Descripción |
 |---------|--------------|---------|-------------|
-| **Catastro ontology** | | | |
-| `catastro-use.ttl` | `edintkos:Uso` | `edintkos-use:` | Vocabulario controlado de usos para el Catastro Español (15 conceptos: Residencial, Industrial, Oficinas, Comercial, Deportivo, Espectáculos, Ocio-Hostelería, Sanitario, Cultural, Religioso, Educativo, Singular, Aparcamiento-Almacenamiento, Espacios Libres, Agrícola) |
-| `catastro-estado.ttl` | `edintkos:Estado` | `edintkos-estado:` | Vocabulario controlado de estados de conservación (4 conceptos: Normal, Regular, Deficiente, Ruinoso) |
-| `catastro-clase.ttl` | `edintkos:Clase` | `edintkos-clase:` | Vocabulario controlado de clasificación catastral (Urbana, Rural, BICES A-D) |
 | **Inmobiliaria ontology** | | | |
 | `inmobiliaria-transaction-type.ttl` | `edintkos:TransactionType` | `edintkos-trans:` | Vocabulario controlado de tipos de transacción inmobiliaria (3 conceptos: Venta, Alquiler, Traspaso) |
+
+**Nota**: Los vocabularios del catastro (uso, estado, clase) han sido movidos al repositorio separado [edint-ontologia-catastro](https://github.com/edint/edint-ontologia-catastro).
 
 # Buenas prácticas
 

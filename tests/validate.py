@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Validation script for the Spanish Cadastre Ontology.
+Validation script for the Spanish Real Estate Ontology.
 
 Checks ontology, SKOS vocabularies, and examples for consistency,
 completeness, and conformance to EDINT patterns.
@@ -20,11 +20,11 @@ import pyshacl
 
 
 # Namespaces
-CAT = Namespace("https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#")
+EDINTINM = Namespace("https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#")
+EDINTCAT = Namespace("https://edint.github.io/edint-ontologia-catastro/ontology/catastro#")
 EDINTKOS = Namespace("http://vocab.linkeddata.es/datosabiertos/kos/edint/")
 EDINTKOS_USE = Namespace("http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/")
-EDINTKOS_ESTADO = Namespace("http://vocab.linkeddata.es/datosabiertos/kos/edint/estado/")
-EDINTKOS_CLASE = Namespace("http://vocab.linkeddata.es/datosabiertos/kos/edint/clase/")
+EDINTKOS_TRANSACTION = Namespace("http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 CC = Namespace("http://creativecommons.org/ns#")
 VANN = Namespace("http://purl.org/vocab/vann/")
@@ -66,7 +66,7 @@ class ProjectPaths:
         self.tests_dir = project_root / "tests"
 
     def get_ontology_file(self) -> Path:
-        return self.ontology_dir / "catastro.ttl"
+        return self.ontology_dir / "inmobiliaria.ttl"
 
     def get_kos_files(self) -> List[Path]:
         return sorted(self.kos_dir.glob("*.ttl"))
@@ -164,21 +164,21 @@ def phase_2_ontology_self_check(paths: ProjectPaths) -> ValidationResult:
                     f"owl:versionIRI ({version_iri}) does not contain version info ({version_str})"
                 )
 
-    # Get all catastro: classes and properties
+    # Get all edintinm: classes and properties
     classes = set()
     object_properties = set()
     datatype_properties = set()
 
     for s in g.subjects(RDF.type, OWL.Class):
-        if s.startswith(CAT):
+        if s.startswith(EDINTINM):
             classes.add(s)
 
     for s in g.subjects(RDF.type, OWL.ObjectProperty):
-        if s.startswith(CAT):
+        if s.startswith(EDINTINM):
             object_properties.add(s)
 
     for s in g.subjects(RDF.type, OWL.DatatypeProperty):
-        if s.startswith(CAT):
+        if s.startswith(EDINTINM):
             datatype_properties.add(s)
 
     result.add_info(f"Found {len(classes)} classes, {len(object_properties)} object properties, {len(datatype_properties)} data properties")
@@ -396,7 +396,7 @@ def phase_4_skos_ontology_linkage(paths: ProjectPaths, all_schemes: Dict[URIRef,
     referenced_schemes = set()
 
     for obj in g.objects(None, OWL.hasValue):
-        if obj.startswith(EDINTKOS) and not obj.startswith(EDINTKOS_USE) and not obj.startswith(EDINTKOS_ESTADO) and not obj.startswith(EDINTKOS_CLASE):
+        if obj.startswith(EDINTKOS) and not obj.startswith(EDINTKOS_USE) and not obj.startswith(EDINTKOS_TRANSACTION):
             # This looks like a concept scheme reference
             referenced_schemes.add(obj)
 
@@ -464,7 +464,7 @@ def phase_5_example_conformance(paths: ProjectPaths, all_schemes: Dict[URIRef, G
         # Check ontology terms used
         unknown_terms = set()
         for term in set(g.subjects(None, None)) | set(g.predicates(None, None)) | set(g.objects(None, None)):
-            if isinstance(term, URIRef) and term.startswith(CAT):
+            if isinstance(term, URIRef) and term.startswith(EDINTINM):
                 if term not in defined_ontology_terms:
                     unknown_terms.add(term)
 
@@ -474,7 +474,7 @@ def phase_5_example_conformance(paths: ProjectPaths, all_schemes: Dict[URIRef, G
         # Check SKOS concepts used
         unknown_skos = set()
         for term in set(g.subjects(None, None)) | set(g.objects(None, None)):
-            if isinstance(term, URIRef) and (term.startswith(EDINTKOS_USE) or term.startswith(EDINTKOS_ESTADO) or term.startswith(EDINTKOS_CLASE)):
+            if isinstance(term, URIRef) and (term.startswith(EDINTKOS_USE) or term.startswith(EDINTKOS_TRANSACTION)):
                 if term not in all_concepts:
                     unknown_skos.add(term)
 
@@ -573,7 +573,7 @@ def main():
     paths = ProjectPaths(project_root)
 
     print("=" * 70)
-    print("Spanish Cadastre Ontology Validation")
+    print("Spanish Real Estate Ontology Validation")
     print(f"Project root: {project_root}")
     print("=" * 70)
     print()
