@@ -12,10 +12,21 @@ El objetivo de esta carpeta es almacenar los archivos de los **vocabularios cont
 
 Incluya recursos en los siguientes formatos:
 
-- `.owl` — Ficheros Ontology Web Language files  
-- `.rdf` — Ficheros  Resource Description Framework files  
-- `.ttl` — Serialización en Turtle   
+- `.owl` — Ficheros Ontology Web Language files
+- `.rdf` — Ficheros  Resource Description Framework files
+- `.ttl` — Serialización en Turtle
 - `.jsonld` — JSON para datos enlazados
+
+# Vocabularios SKOS implementados
+
+| Archivo | ConceptScheme | Prefijo | Descripción |
+|---------|--------------|---------|-------------|
+| **Catastro ontology** | | | |
+| `catastro-use.ttl` | `edintkos:Uso` | `edintkos-use:` | Vocabulario controlado de usos para el Catastro Español (15 conceptos: Residencial, Industrial, Oficinas, Comercial, Deportivo, Espectáculos, Ocio-Hostelería, Sanitario, Cultural, Religioso, Educativo, Singular, Aparcamiento-Almacenamiento, Espacios Libres, Agrícola) |
+| `catastro-estado.ttl` | `edintkos:Estado` | `edintkos-estado:` | Vocabulario controlado de estados de conservación (4 conceptos: Normal, Regular, Deficiente, Ruinoso) |
+| `catastro-clase.ttl` | `edintkos:Clase` | `edintkos-clase:` | Vocabulario controlado de clasificación catastral (Urbana, Rural, BICES A-D) |
+| **Inmobiliaria ontology** | | | |
+| `inmobiliaria-transaction-type.ttl` | `edintkos:TransactionType` | `edintkos-trans:` | Vocabulario controlado de tipos de transacción inmobiliaria (3 conceptos: Venta, Alquiler, Traspaso) |
 
 # Buenas prácticas
 
