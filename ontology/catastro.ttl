@@ -187,12 +187,9 @@ edintcat:hasAddress
         a owl:Class ;
         owl:unionOf (edintcat:CadastralProperty edintcat:CadastralParcel) ;
     ] ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (callejero:Portal callejero:Via) ;
-    ] ;
-    rdfs:comment "Relationship linking a property or parcel to its address in the callejero vocabulary. Through this relationship, location information (municipality, province, postal code) can be obtained from the linked callejero:Portal or callejero:Via. The callejero vocabulary provides properties like callejero:via to navigate the address hierarchy."@en ;
-    rdfs:comment "Relación que vincula un inmueble o parcela con su dirección en el vocabulario callejero. A través de esta relación, se puede obtener información de ubicación (municipio, provincia, código postal) del Portal o Vía enlazada. El vocabulario callejero proporciona propiedades como callejero:via para navegar la jerarquía de direcciones."@es ;
+    rdfs:range callejero:Portal ;
+    rdfs:comment "Relationship linking a property or parcel to its address in the callejero vocabulary. Through this relationship, location information (municipality, province, postal code) can be obtained from the linked callejero:Portal."@en ;
+    rdfs:comment "Relación que vincula un inmueble o parcela con su dirección en el vocabulario callejero. A través de esta relación, se puede obtener información de ubicación (municipio, provincia, código postal) del Portal enlazado."@es ;
     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> .
 
 
