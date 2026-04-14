@@ -40,7 +40,8 @@ edintkos:TransactionType a skos:ConceptScheme ;
     rdfs:label "Tipos de Transacción Inmobiliaria"@es ;
     rdfs:label "Real Estate Transaction Types"@en ;
     skos:definition "Esquema de conceptos que define los tipos de transacción inmobiliaria en el contexto español."@es ;
-    skos:definition "Concept scheme defining real estate transaction types in the Spanish context."@en .
+    skos:definition "Concept scheme defining real estate transaction types in the Spanish context."@en ;
+    skos:hasTopConcept edintkos-trans:Venta, edintkos-trans:Alquiler, edintkos-trans:Traspaso .
 
 # =============================================================================
 # CONCEPTS
