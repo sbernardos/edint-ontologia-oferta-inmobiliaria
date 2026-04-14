@@ -1,5 +1,9 @@
 # Ontología EDINT Inmobiliaria (EDINT Real Estate Ontology)
 
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)
+![Status](https://img.shields.io/badge/status-Draft-orange)
+
 La ontología Inmobiliaria representa el dominio de ofertas inmobiliarias en el contexto español.
 
 # Propósito y alcance de la ontología (Purpose and scope of the ontology)
@@ -21,6 +25,95 @@ Esta imagen ayuda a los usuarios y colaboradores a comprender rápidamente la es
 - Debe referenciarse en este README usando la sintaxis de Markdown, por ejemplo:
 
 ![Diagrama del modelo conceptual](diagrams/diagrama-inmobiliaria.drawio.png)
+
+# Cómo usar esta ontología (How to use this ontology)
+
+## Basic Usage / Uso Básico
+
+To create a real estate listing, follow this structure:
+
+Para crear un anuncio inmobiliario, siga esta estructura:
+
+```turtle
+@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ex:MyListing a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-001" ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V1A> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity <cadastral-entity-uri> .
+```
+
+## Property Types / Tipos de Inmuebles
+
+The ontology uses the Spanish Cadastre use vocabulary:
+
+La ontología utiliza el vocabulario de usos del Catastro Español:
+
+- `V1A` - Vivienda / Dwelling
+- `V2A` - Local Comercial / Commercial Local
+- `V2B` - Oficina / Office
+- `V2C` - Nave Industrial / Industrial Warehouse
+- `V4` - Solar / Plot
+
+## Transaction Types / Tipos de Transacción
+
+Available transaction types:
+
+Tipos de transacción disponibles:
+
+- `venta` - Sale / Venta
+- `alquiler` - Rent / Alquiler
+- `traspaso` - Transfer / Traspaso
+
+## SPARQL Queries / Consultas SPARQL
+
+Example query to get all active listings:
+
+Consulta de ejemplo para obtener todos los anuncios activos:
+
+```sparql
+PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?listing ?listingId
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:isActive true .
+}
+```
+
+See `requirements/` directory for more competency questions and SPARQL queries.
+
+Vea el directorio `requirements/` para más preguntas de competencia y consultas SPARQL.
+
+## Examples / Ejemplos
+
+Example instances are available in the `examples/` directory:
+
+Las instancias de ejemplo están disponibles en el directorio `examples/`:
+
+- `listing-sale-example.ttl` - Sale listing / Anuncio de venta
+- `listing-rent-example.ttl` - Rent listing / Anuncio de alquiler
+- `listing-complete-example.ttl` - Complete example / Ejemplo completo
+
+See `examples/README.md` for detailed documentation.
+
+Vea `examples/README.md` para documentación detallada.
+
+## Validation / Validación
+
+Validate instances using the provided script:
+
+Valide instancias usando el script proporcionado:
+
+```bash
+python tests/validate.py examples/listing-sale-example.ttl
+```
 
 # Estructura del repositorio (Repository structure)
 
@@ -49,5 +142,30 @@ Esta ontología ha sido desarrollada en el contexto del Espacio de Datos para la
 Esta ontología importa y se integra con:
 
 - **EDINT Catastro** ([edint-ontologia-catastro](https://github.com/edint/edint-ontologia-catastro)) — Para acceder a información catastral como parcelas, propiedades y construcciones.
+- **GeoSPARQL** — Para especificar la ubicación geográfica de los inmuebles usando geometrías y coordenadas WKT.
+- **SKOS Vocabularies** — Para usar vocabularios controlados:
+  - Uso de Catastro: `http://vocab.linkeddata.es/datosabiertos/kos/edint/uso`
+  - Tipo de Transacción: `http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type`
+
+### Integration Details / Detalles de Integración
+
+**Catastral References / Referencias Catastrales:**
+
+La propiedad `edintinm:refersToCadastralEntity` vincula anuncios inmobiliarios con:
+
+- `catastro:CadastralProperty` — Para edificios o unidades (viviendas, locales, oficinas)
+- `catastro:CadastralParcel` — Para terrenos o solares
+
+Esto permite acceder a información catastral completa:
+- Referencia catastral (14 dígitos)
+- Dirección (calle, número, código postal, ciudad, provincia)
+- Geometría (coordenadas)
+
+**Geographic Location / Ubicación Geográfica:**
+
+A través de la integración con GeoSPARQL:
+- `geo:hasGeometry` — Referencia a la geometría de la entidad catastral
+- `geo:asWKT` — Coordenadas en formato Well-Known Text (WKT)
+- Tipos de geometría soportados: Point, Polygon, etc.
 
 ![Logos](./resources/EDINT_UE_V-Color.png)
