@@ -35,7 +35,6 @@
     owl:imports <http://www.opengis.net/ont/geosparql> ,
                 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> ,
-                <http://vocab.linkeddata.es/datosabiertos/kos/edint/estado> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/clase> ;
     rdfs:comment "Initial draft version focusing on core classes: CadastralParcel, CadastralProperty, and CadastralConstruction with their relationships and properties."@en ;
     rdfs:comment "Versión inicial centrada en las clases principales: ParcelaCatastral, Inmueble y Construcción con sus relaciones y propiedades."@es ;
@@ -223,14 +222,6 @@ edintcat:hasClass
     rdfs:comment "Relationship that assigns a classification (urban/rural) to a parcel or property. Classification concepts are defined in external SKOS vocabulary at http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase."@en ;
     rdfs:comment "Relación que asigna una clasificación (urbano/rústico) a una parcela o inmueble. Los conceptos de clasificación se definen en el vocabulario SKOS externo en http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase."@es .
 
-edintcat:hasCondition
-    a owl:ObjectProperty ;
-    rdfs:label "has condition"@en ;
-    rdfs:label "tiene estado"@es ;
-    rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range skos:Concept ;
-    rdfs:comment "Relationship that assigns a conservation condition to a construction. Condition concepts are defined in external SKOS vocabulary at http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado."@en ;
-    rdfs:comment "Relación que asigna un estado de conservación a una construcción. Los conceptos de estado se definen en el vocabulario SKOS externo en http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado."@es .
 
 
 # --- Temporal relationships ---
