@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL Queries - Real Estate Ontology EDINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body { padding: 20px; }
+        .query-box { 
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            border-left: 4px solid #007bff; 
+            margin: 15px 0; 
+            border-radius: 4px;
+        }
+        .query-title { font-weight: bold; color: #004085; }
+        .query-sparql { 
+            background-color: #e9ecef; 
+            padding: 10px; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            white-space: pre-wrap;
+            font-size: 12px;
+        }
+        .badge {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SPARQL Queries Documentation</h1>
+        <h2>Documentación de Consultas SPARQL</h2>
+        <p class="lead">Real Estate Ontology EDINT - Ontología Inmobiliaria EDINT</p>
+        <hr>
+        
+        <p>
+            This document contains the SPARQL queries that implement the competency questions for the Real Estate Ontology.
+            Each query addresses specific information needs about real estate listings, their properties, and relationships.
+        </p>
+        <p>
+            Este documento contiene las consultas SPARQL que implementan las preguntas de competencia para la Ontología Inmobiliaria.
+            Cada consulta aborda necesidades específicas de información sobre anuncios inmobiliarios, sus propiedades y relaciones.
+        </p>
+
+        <h3>Query List / Lista de Consultas</h3>
+        <ul>
+            <li><a href="#CQ01">CQ01 - Transaction Types / Tipos de Transacción</a></li>
+            <li><a href="#CQ02">CQ02 - Listing Information / Información del Anuncio</a></li>
+            <li><a href="#CQ03">CQ03 - Cadastral Relationships / Relaciones Catastrales</a></li>
+            <li><a href="#CQ04">CQ04 - Sale Properties / Propiedades en Venta</a></li>
+            <li><a href="#CQ05">CQ05 - Listing Status / Estado del Anuncio</a></li>
+            <li><a href="#CQ06">CQ06 - Property Types / Tipos de Inmuebles</a></li>
+            <li><a href="#CQ07">CQ07 - Location Specification / Especificación de Ubicación</a></li>
+        </ul>
+        <hr>
+
+        <h2 id="CQ01">CQ01: Transaction Types / Tipos de Transacción</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> What types of real estate transactions exist in the listings? / ¿Qué tipos de transacción inmobiliaria existen en los anuncios?</p>
+            <p><strong>Description / Descripción:</strong> Retrieve all distinct transaction types available in the ontology / Recuperar todos los tipos de transacción distintos disponibles en la ontología</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: transactionType</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?transactionType ?transactionLabel ?transactionLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           edintinm:transactionType ?transactionType .
+  
+  OPTIONAL {
+    ?transactionType rdfs:label ?transactionLabel .
+    FILTER (lang(?transactionLabel) = "en")
+  }
+  
+  OPTIONAL {
+    ?transactionType rdfs:label ?transactionLabelEs .
+    FILTER (lang(?transactionLabelEs) = "es")
+  }
+}
+
+ORDER BY ?transactionLabel</div>
+        </div>
+
+        <h2 id="CQ02">CQ02: Listing Information / Información del Anuncio</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> What information is contained in a real estate listing? / ¿Qué información contiene un anuncio inmobiliario?</p>
+            <p><strong>Description / Descripción:</strong> Query all properties and attributes of real estate listings / Consultar todas las propiedades y atributos de los anuncios inmobiliarios</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Multiple Properties</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?listing ?listingId ?isActive ?propertyTypeLabelEs ?transactionTypeLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:isActive ?isActive .
+  
+  OPTIONAL {
+    ?listing edintinm:propertyType ?propertyType .
+    ?propertyType rdfs:label ?propertyTypeLabelEs .
+    FILTER (lang(?propertyTypeLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?listing edintinm:transactionType ?transactionType .
+    ?transactionType rdfs:label ?transactionTypeLabelEs .
+    FILTER (lang(?transactionTypeLabelEs) = "es")
+  }
+}
+
+ORDER BY ?listingId</div>
+        </div>
+
+        <h2 id="CQ03">CQ03: Cadastral Relationships / Relaciones Catastrales</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> How is a listing related to a cadastral entity? / ¿Cómo se relaciona un anuncio con una entidad catastral?</p>
+            <p><strong>Description / Descripción:</strong> Find cadastral entities referenced by real estate listings / Encontrar entidades catastrales referenciadas por los anuncios inmobiliarios</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: refersToCadastralEntity</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT ?listing ?listingId ?cadastralEntity ?entityType ?entityLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:refersToCadastralEntity ?cadastralEntity .
+  
+  ?cadastralEntity rdfs:label ?entityLabelEs .
+  FILTER (lang(?entityLabelEs) = "es")
+  
+  BIND(
+    IF(STRENDS(STR(?cadastralEntity), "CadastralParcel"), 
+       "Parcela Catastral",
+       IF(STRENDS(STR(?cadastralEntity), "CadastralProperty"),
+          "Inmueble Catastral",
+          "Entidad Desconocida")
+    ) AS ?entityType)
+}
+
+ORDER BY ?listingId</div>
+        </div>
+
+        <h2 id="CQ04">CQ04: Sale Properties / Propiedades en Venta</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> What properties does a property have in a sale listing? / ¿Qué propiedades tiene un inmueble en venta?</p>
+            <p><strong>Description / Descripción:</strong> Query properties with specific transaction type (sale) / Consultar propiedades con tipo de transacción específico (venta)</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: propertyType, transactionType</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?listing ?listingId ?propertyType ?propertyLabelEs ?propertyTypeLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           edintinm:propertyType ?propertyType ;
+           edintinm:transactionType ?transactionType .
+  
+  ?transactionType skos:prefLabel ?transactionLabel .
+  FILTER (STRLCASE(STR(?transactionLabel)) = "venta" || 
+         STRLCASE(STR(?transactionLabel)) = "sale")
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabelEs .
+    FILTER (lang(?propertyLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?propertyType skos:prefLabel ?propertyTypeLabelEs .
+    FILTER (lang(?propertyTypeLabelEs) = "es")
+  }
+}
+
+ORDER BY ?listingId</div>
+        </div>
+
+        <h2 id="CQ05">CQ05: Listing Status / Estado del Anuncio</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> What is the current status of a real estate listing? / ¿Cuál es el estado actual de un anuncio inmobiliario?</p>
+            <p><strong>Description / Descripción:</strong> Check status of real estate listings (active/inactive) / Verificar estado de los anuncios inmobiliarios (activo/inactivo)</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: isActive</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+
+SELECT ?listing ?listingId ?isActive ?statusLabel
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:isActive ?isActive .
+  
+  BIND(
+    IF(?isActive = true, 
+       "Activo"^^&lt;http://www.w3.org/2001/XMLSchema#string&gt;, 
+       "Inactivo"^^&lt;http://www.w3.org/2001/XMLSchema#string&gt;)
+    AS ?statusLabel)
+}
+
+ORDER BY ?listingId</div>
+        </div>
+
+        <h2 id="CQ06">CQ06: Property Types / Tipos de Inmuebles</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> What types of properties can be advertised? / ¿Qué tipos de inmuebles se pueden anunciar?</p>
+            <p><strong>Description / Descripción:</strong> Retrieve all property types used in listings / Recuperar todos los tipos de inmuebles usados en los anuncios</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: propertyType</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+SELECT DISTINCT ?propertyType ?propertyLabel ?propertyLabelEs ?propertyPrefLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           edintinm:propertyType ?propertyType .
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabel .
+    FILTER (lang(?propertyLabel) = "en")
+  }
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabelEs .
+    FILTER (lang(?propertyLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?propertyType skos:prefLabel ?propertyPrefLabelEs .
+    FILTER (lang(?propertyPrefLabelEs) = "es")
+  }
+}
+
+ORDER BY ?propertyLabelEs</div>
+        </div>
+
+        <h2 id="CQ07">CQ07: Location Specification / Especificación de Ubicación</h2>
+        <div class="query-box">
+            <p><strong>Question / Pregunta:</strong> How is the location of a property specified? / ¿Cómo se especifica la ubicación de un inmueble?</p>
+            <p><strong>Description / Descripción:</strong> Query geographic location of properties in listings / Consultar ubicación geográfica de los inmuebles en los anuncios</p>
+            <p><span class="badge bg-primary">High Priority</span><span class="badge bg-secondary">Class: RealEstateListing</span><span class="badge bg-secondary">Property: refersToCadastralEntity</span></p>
+            <p class="query-title">SPARQL Query:</p>
+            <div class="query-sparql">PREFIX edintinm: &lt;https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX catastro: &lt;https://edint.github.io/edint-ontologia-catastro/ontology/catastro#&gt;
+
+SELECT ?listing ?listingId ?cadastralEntity ?hasGeometry ?wktCoordinate ?address
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:refersToCadastralEntity ?cadastralEntity .
+  
+  OPTIONAL {
+    ?cadastralEntity geo:hasGeometry ?hasGeometry .
+    
+    OPTIONAL {
+      ?hasGeometry geo:asWKT ?wktCoordinate .
+    }
+  }
+  
+  OPTIONAL {
+    ?cadastralEntity catastro:hasAddress ?address .
+  }
+}
+
+ORDER BY ?listingId</div>
+        </div>
+
+        <hr>
+        <h3>Usage Instructions / Instrucciones de Uso</h3>
+        <ol>
+            <li>Download or copy the SPARQL query file / Descargue o copie el archivo de consulta SPARQL</li>
+            <li>Use a SPARQL endpoint that has the Real Estate Ontology loaded / Use un punto final SPARQL que tenga la Ontología Inmobiliaria cargada</li>
+            <li>Execute the query to retrieve results / Ejecute la consulta para recuperar los resultados</li>
+            <li>Modify the query as needed for your specific use case / Modifique la consulta según sea necesario para su caso de uso específico</li>
+        </ol>
+        
+        <h3>Related Files / Archivos Relacionados</h3>
+        <ul>
+            <li><code>requirements/requirements.csv</code> - Requirements mapping file / Archivo de mapeo de requisitos</li>
+            <li><code>ontology/inmobiliaria.ttl</code> - Ontology definition / Definición de la ontología</li>
+            <li><code>examples/</code> - Example instances / Instancias de ejemplo</li>
+        </ul>
+
+        <hr>
+        <footer>
+            <p><small>Generated for EDINT Real Estate Ontology / Generado para la Ontología Inmobiliaria EDINT</small></p>
+            <p><small>Last updated: 2026-04-14 / Última actualización: 2026-04-14</small></p>
+        </footer>
+    </div>
+</body>
+</html>
