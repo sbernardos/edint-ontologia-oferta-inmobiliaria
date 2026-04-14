@@ -7,7 +7,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix time: <http://www.w3.org/2006/time#> .
 @prefix callejero: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix qudtunit: <http://qudt.org/vocab/unit/> .
@@ -34,7 +33,6 @@
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     owl:imports <http://www.opengis.net/ont/geosparql> ,
-                <http://www.w3.org/2006/time#> ,
                 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> ,
                 <http://vocab.linkeddata.es/datosabiertos/kos/edint/estado> ,
@@ -126,15 +124,6 @@ edintcat:Renovation
 
 # Use geo:hasGeometry from GeoSPARQL (standard property)
 # Domain restriction for cadastral entities can be added via subPropertyOf or local constraints
-
-edintcat:hasReferencePoint
-    a owl:ObjectProperty ;
-    rdfs:label "has reference point"@en ;
-    rdfs:label "tiene punto de referencia"@es ;
-    rdfs:domain edintcat:CadastralParcel ;
-    rdfs:range geo:Point ;
-    rdfs:comment "Relationship indicating the geographic reference point of a parcel."@en ;
-    rdfs:comment "Relación que indica el punto de referencia geográfico de una parcela."@es .
 
 # --- Cadastral hierarchy ---
 
@@ -246,26 +235,7 @@ edintcat:hasCondition
 
 # --- Temporal relationships ---
 
-edintcat:hasConstructionDate
-    a owl:ObjectProperty ;
-    rdfs:label "has construction date"@en ;
-    rdfs:label "tiene fecha de construcción"@es ;
-    rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range time:Instant ;
-    rdfs:comment "Relationship indicating the construction date of a building."@en ;
-    rdfs:comment "Relación que indica la fecha de construcción de un edificio."@es .
-
-edintcat:hasLifespan
-    a owl:ObjectProperty ;
-    rdfs:label "has lifespan"@en ;
-    rdfs:label "tiene periodo de vida"@es ;
-    rdfs:domain [
-        a owl:Class ;
-        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty edintcat:CadastralConstruction) ;
-    ] ;
-    rdfs:range time:TemporalEntity ;
-    rdfs:comment "Relationship indicating the validity period of a version of a cadastral entity."@en ;
-    rdfs:comment "Relación que indica el periodo de validez de una versión de una entidad catastral."@es .
+# (None - construction date is modeled as datatype property constructionYear)
 
 # --- Renovation relationships ---
 
@@ -370,36 +340,9 @@ edintcat:constructionYear
     rdfs:label "construction year"@en ;
     rdfs:label "año de construcción"@es ;
     rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range xsd:integer ;
+    rdfs:range xsd:gYear ;
     rdfs:comment "Year in which the building was constructed."@en ;
     rdfs:comment "Año en que se construyó el edificio."@es .
-
-edintcat:numberOfFloors
-    a owl:DatatypeProperty ;
-    rdfs:label "number of floors"@en ;
-    rdfs:label "número de plantas"@es ;
-    rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of floors above ground."@en ;
-    rdfs:comment "Número de plantas sobre el suelo."@es .
-
-edintcat:numberOfPremises
-    a owl:DatatypeProperty ;
-    rdfs:label "number of premises"@en ;
-    rdfs:label "número de locales"@es ;
-    rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of units or premises within the construction."@en ;
-    rdfs:comment "Número de unidades o locales dentro de la construcción."@es .
-
-edintcat:numberOfDwellings
-    a owl:DatatypeProperty ;
-    rdfs:label "number of dwellings"@en ;
-    rdfs:label "número de viviendas"@es ;
-    rdfs:domain edintcat:CadastralConstruction ;
-    rdfs:range xsd:integer ;
-    rdfs:comment "Number of dwellings within the construction."@en ;
-    rdfs:comment "Número de viviendas dentro de la construcción."@es .
 
 edintcat:staircase
     a owl:DatatypeProperty ;

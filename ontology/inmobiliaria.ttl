@@ -91,17 +91,8 @@ edintinm:transactionType
     rdfs:label "tipo de transacción"@es ;
     rdfs:domain edintinm:RealEstateListing ;
     rdfs:range skos:Concept ;
-    rdfs:comment "Property indicating the type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ;
+    rdfs:comment "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ;
     rdfs:comment "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es .
-
-edintinm:isActive
-    a owl:DatatypeProperty ;
-    rdfs:label "is active"@en ;
-    rdfs:label "está activo"@es ;
-    rdfs:domain edintinm:RealEstateListing ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en ;
-    rdfs:comment "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es .
 
 # --- Link to Cadastral entities ---
 
@@ -121,6 +112,15 @@ edintinm:refersToCadastralEntity
 # =============================================================================
 # DATA PROPERTIES
 # =============================================================================
+
+edintinm:isActive
+    a owl:DatatypeProperty ;
+    rdfs:label "is active"@en ;
+    rdfs:label "está activo"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en ;
+    rdfs:comment "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es .
 
 dcterms:identifier
     a owl:DatatypeProperty ;
