@@ -1,4 +1,4 @@
-@prefix catastro: <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#> .
+@prefix edintcat: <https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -42,7 +42,7 @@
     rdfs:comment "Initial draft version focusing on core classes: CadastralParcel, CadastralProperty, and CadastralConstruction with their relationships and properties."@en ;
     rdfs:comment "Versión inicial centrada en las clases principales: ParcelaCatastral, Inmueble y Construcción con sus relaciones y propiedades."@es ;
     vann:preferredNamespaceUri "https://edint.github.io/edint-ontologia-inmuebles/ontology/catastro#" ;
-    vann:preferredNamespacePrefix "catastro" .
+    vann:preferredNamespacePrefix "edintcat" .
 
 dcterms:contributor a owl:AnnotationProperty .
 dcterms:created a owl:AnnotationProperty .
@@ -64,7 +64,7 @@ cc:license a owl:AnnotationProperty .
 
 # --- Core Classes ---
 
-catastro:CadastralParcel
+edintcat:CadastralParcel
     a owl:Class ;
     rdfs:label "Cadastral Parcel"@en ;
     rdfs:label "Parcela Catastral"@es ;
@@ -73,11 +73,11 @@ catastro:CadastralParcel
     rdfs:subClassOf geo:Feature ;
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty catastro:hasCadastralReference ;
+        owl:onProperty edintcat:hasCadastralReference ;
         owl:cardinality "1"^^xsd:nonNegativeInteger
     ] .
 
-catastro:CadastralProperty
+edintcat:CadastralProperty
     a owl:Class ;
     rdfs:label "Cadastral Property"@en ;
     rdfs:label "Inmueble Catastral"@es ;
@@ -86,18 +86,18 @@ catastro:CadastralProperty
     rdfs:subClassOf geo:Feature ;
     rdfs:subClassOf [
         a owl:Restriction ;
-        owl:onProperty catastro:hasCadastralReference ;
+        owl:onProperty edintcat:hasCadastralReference ;
         owl:cardinality "1"^^xsd:nonNegativeInteger
     ] .
 
-catastro:CadastralReference
+edintcat:CadastralReference
     a owl:Class ;
     rdfs:label "Cadastral Reference"@en ;
     rdfs:label "Referencia Catastral"@es ;
     rdfs:comment "Complete cadastral reference composed of parcel reference and property reference."@en ;
     rdfs:comment "Referencia catastral completa compuesta por referencia de parcela y referencia de inmueble."@es .
 
-catastro:CadastralConstruction
+edintcat:CadastralConstruction
     a owl:Class ;
     rdfs:label "Cadastral Construction"@en ;
     rdfs:label "Construcción Catastral"@es ;
@@ -107,7 +107,7 @@ catastro:CadastralConstruction
 
 # --- Supporting Classes ---
 
-catastro:Renovation
+edintcat:Renovation
     a owl:Class ;
     rdfs:label "Renovation"@en ;
     rdfs:label "Reforma"@es ;
@@ -127,77 +127,77 @@ catastro:Renovation
 # Use geo:hasGeometry from GeoSPARQL (standard property)
 # Domain restriction for cadastral entities can be added via subPropertyOf or local constraints
 
-catastro:hasReferencePoint
+edintcat:hasReferencePoint
     a owl:ObjectProperty ;
     rdfs:label "has reference point"@en ;
     rdfs:label "tiene punto de referencia"@es ;
-    rdfs:domain catastro:CadastralParcel ;
+    rdfs:domain edintcat:CadastralParcel ;
     rdfs:range geo:Point ;
     rdfs:comment "Relationship indicating the geographic reference point of a parcel."@en ;
     rdfs:comment "Relación que indica el punto de referencia geográfico de una parcela."@es .
 
 # --- Cadastral hierarchy ---
 
-catastro:hasCadastralProperty
+edintcat:hasCadastralProperty
     a owl:ObjectProperty ;
     rdfs:label "has cadastral property"@en ;
     rdfs:label "tiene inmueble catastral"@es ;
-    rdfs:domain catastro:CadastralParcel ;
-    rdfs:range catastro:CadastralProperty ;
+    rdfs:domain edintcat:CadastralParcel ;
+    rdfs:range edintcat:CadastralProperty ;
     rdfs:comment "Relationship indicating that a cadastral parcel contains one or more cadastral properties (e.g., flats in a horizontal division)."@en ;
     rdfs:comment "Relación que indica que una parcela catastral contiene uno o más inmuebles catastrales (ej. pisos en una división horizontal)."@es ;
-    owl:inverseOf catastro:onCadastralParcel .
+    owl:inverseOf edintcat:onCadastralParcel .
 
-catastro:onCadastralParcel
+edintcat:onCadastralParcel
     a owl:ObjectProperty ;
     rdfs:label "on cadastral parcel"@en ;
     rdfs:label "sobre parcela catastral"@es ;
     rdfs:comment "Relationship indicating that a cadastral property is located on a specific cadastral parcel."@en ;
     rdfs:comment "Relación que indica que un inmueble catastral está ubicado sobre una parcela catastral específica."@es ;
-    rdfs:domain catastro:CadastralProperty ;
-    rdfs:range catastro:CadastralParcel ;
-    owl:inverseOf catastro:hasCadastralProperty .
+    rdfs:domain edintcat:CadastralProperty ;
+    rdfs:range edintcat:CadastralParcel ;
+    owl:inverseOf edintcat:hasCadastralProperty .
 
-catastro:hasCadastralConstruction
+edintcat:hasCadastralConstruction
     a owl:ObjectProperty ;
     rdfs:label "has cadastral construction"@en ;
     rdfs:label "tiene construcción catastral"@es ;
-    rdfs:domain catastro:CadastralProperty ;
-    rdfs:range catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralProperty ;
+    rdfs:range edintcat:CadastralConstruction ;
     rdfs:comment "Relationship indicating the specific constructive units (locales/parts) that make up a cadastral property."@en ;
     rdfs:comment "Relación que indica las unidades constructivas específicas (locales/partes) que conforman un inmueble catastral."@es ;
-    owl:inverseOf catastro:onCadastralProperty .
+    owl:inverseOf edintcat:onCadastralProperty .
 
-catastro:onCadastralProperty
+edintcat:onCadastralProperty
     a owl:ObjectProperty ;
     rdfs:label "on cadastral property"@en ;
     rdfs:label "en inmueble catastral"@es ;
     rdfs:comment "Relationship indicating that a cadastral construction is located on a specific cadastral property."@en ;
     rdfs:comment "Relación que indica que una construcción catastral está ubicada sobre un inmueble catastral específico."@es ;
-    rdfs:domain catastro:CadastralConstruction ;
-    rdfs:range catastro:CadastralProperty ;
-    owl:inverseOf catastro:hasCadastralConstruction .
+    rdfs:domain edintcat:CadastralConstruction ;
+    rdfs:range edintcat:CadastralProperty ;
+    owl:inverseOf edintcat:hasCadastralConstruction .
 
-catastro:hasHorizontalDivision
+edintcat:hasHorizontalDivision
     a owl:DatatypeProperty ;
     rdfs:label "has horizontal division"@en ;
     rdfs:label "tiene división horizontal"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralParcel catastro:CadastralConstruction) ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralConstruction) ;
     ] ;
     rdfs:range xsd:boolean ;
     rdfs:comment "Boolean indicating whether a parcel or construction is subject to horizontal division regime."@en ;
     rdfs:comment "Booleano que indica si una parcela o construcción está sujeta a régimen de división horizontal."@es .
 
 
-catastro:hasAddress
+edintcat:hasAddress
     a owl:ObjectProperty ;
     rdfs:label "has address"@en ;
     rdfs:label "tiene dirección"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralProperty catastro:CadastralParcel) ;
+        owl:unionOf (edintcat:CadastralProperty edintcat:CadastralParcel) ;
     ] ;
     rdfs:range [
         a owl:Class ;
@@ -210,35 +210,35 @@ catastro:hasAddress
 
 # --- Use relationship ---
 
-catastro:hasUse
+edintcat:hasUse
     a owl:ObjectProperty ;
     rdfs:label "has use"@en ;
     rdfs:label "tiene uso"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralProperty catastro:CadastralConstruction) ;
+        owl:unionOf (edintcat:CadastralProperty edintcat:CadastralConstruction) ;
     ] ;
     rdfs:range skos:Concept ;
     rdfs:comment "Relationship that assigns a primary use to a property or construction. Use concepts are defined in the external SKOS vocabulary at http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso."@en ;
     rdfs:comment "Relación que asigna un uso principal a un inmueble o construcción. Los conceptos de uso se definen en el vocabulario SKOS externo en http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/uso."@es .
 
-catastro:hasClass
+edintcat:hasClass
     a owl:ObjectProperty ;
     rdfs:label "has class"@en ;
     rdfs:label "tiene clase"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralParcel catastro:CadastralProperty) ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty) ;
     ] ;
     rdfs:range skos:Concept ;
     rdfs:comment "Relationship that assigns a classification (urban/rural) to a parcel or property. Classification concepts are defined in external SKOS vocabulary at http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase."@en ;
     rdfs:comment "Relación que asigna una clasificación (urbano/rústico) a una parcela o inmueble. Los conceptos de clasificación se definen en el vocabulario SKOS externo en http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/clase."@es .
 
-catastro:hasCondition
+edintcat:hasCondition
     a owl:ObjectProperty ;
     rdfs:label "has condition"@en ;
     rdfs:label "tiene estado"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range skos:Concept ;
     rdfs:comment "Relationship that assigns a conservation condition to a construction. Condition concepts are defined in external SKOS vocabulary at http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado."@en ;
     rdfs:comment "Relación que asigna un estado de conservación a una construcción. Los conceptos de estado se definen en el vocabulario SKOS externo en http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/estado."@es .
@@ -246,22 +246,22 @@ catastro:hasCondition
 
 # --- Temporal relationships ---
 
-catastro:hasConstructionDate
+edintcat:hasConstructionDate
     a owl:ObjectProperty ;
     rdfs:label "has construction date"@en ;
     rdfs:label "tiene fecha de construcción"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range time:Instant ;
     rdfs:comment "Relationship indicating the construction date of a building."@en ;
     rdfs:comment "Relación que indica la fecha de construcción de un edificio."@es .
 
-catastro:hasLifespan
+edintcat:hasLifespan
     a owl:ObjectProperty ;
     rdfs:label "has lifespan"@en ;
     rdfs:label "tiene periodo de vida"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralParcel catastro:CadastralProperty catastro:CadastralConstruction) ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty edintcat:CadastralConstruction) ;
     ] ;
     rdfs:range time:TemporalEntity ;
     rdfs:comment "Relationship indicating the validity period of a version of a cadastral entity."@en ;
@@ -270,39 +270,54 @@ catastro:hasLifespan
 # --- Renovation relationships ---
 
 
-catastro:hasRenovation
+edintcat:hasRenovation
     a owl:ObjectProperty ;
     rdfs:label "has renovation"@en ;
     rdfs:label "tiene reforma"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
-    rdfs:range catastro:Renovation ;
+    rdfs:domain edintcat:CadastralConstruction ;
+    rdfs:range edintcat:Renovation ;
     rdfs:comment "Relationship indicating that a construction has undergone one or more renovation events."@en ;
     rdfs:comment "Relación que indica que una construcción ha sufrido una o más reformas."@es ;
-    owl:inverseOf catastro:renovationOf .
+    owl:inverseOf edintcat:renovationOf .
 
-catastro:renovationOf
+edintcat:renovationOf
     a owl:ObjectProperty ;
     rdfs:label "renovation of"@en ;
     rdfs:label "reforma de"@es ;
-    rdfs:domain catastro:Renovation ;
-    rdfs:range catastro:CadastralConstruction ;
+    rdfs:domain edintcat:Renovation ;
+    rdfs:range edintcat:CadastralConstruction ;
     rdfs:comment "Relationship indicating that a renovation event applies to a specific construction."@en ;
     rdfs:comment "Relación que indica que un evento de reforma se aplica a una construcción específica."@es ;
-    owl:inverseOf catastro:hasRenovation .
+    owl:inverseOf edintcat:hasRenovation .
 
 # --- Reference ---
 
-catastro:hasCadastralReference
+edintcat:hasCadastralReference
     a owl:ObjectProperty ;
     rdfs:label "has cadastral reference"@en ;
     rdfs:label "tiene referencia catastral"@es ;
     rdfs:domain [
         a owl:Class ;
-        owl:unionOf (catastro:CadastralParcel catastro:CadastralProperty) ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty) ;
     ] ;
-    rdfs:range catastro:CadastralReference ;
+    rdfs:range edintcat:CadastralReference ;
     rdfs:comment "Relationship linking a cadastral entity to its complete cadastral reference."@en ;
     rdfs:comment "Relación que vincula una entidad catastral con su referencia catastral completa."@es .
+
+# --- Real Estate Listings ---
+
+edintcat:hasListing
+    a owl:ObjectProperty ;
+    rdfs:label "has real estate listing"@en ;
+    rdfs:label "tiene anuncio inmobiliario"@es ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty) ;
+    ] ;
+    rdfs:range <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing> ;
+    rdfs:comment "Relationship indicating that a cadastral parcel or property has one or more real estate listings associated (offers, rentals, etc.)."@en ;
+    rdfs:comment "Relación que indica que una parcela o inmueble catastral tiene uno o más anuncios inmobiliarios asociados (ofertas, alquileres, etc.)."@es ;
+    owl:inverseOf <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#refersToCadastralEntity> .
 
 # =============================================================================
 # DATA PROPERTIES
@@ -310,123 +325,123 @@ catastro:hasCadastralReference
 
 # --- Identifiers ---
 
-catastro:parcelReference
+edintcat:parcelReference
     a owl:DatatypeProperty ;
     rdfs:label "parcel reference"@en ;
     rdfs:label "referencia de parcela"@es ;
-    rdfs:domain catastro:CadastralReference ;
+    rdfs:domain edintcat:CadastralReference ;
     rdfs:range xsd:string ;
     rdfs:comment "The 7-digit parcel reference part. Format: 7 digits (e.g., 0569302)."@en ;
     rdfs:comment "La parte de 7 dígitos de la referencia de parcela. Formato: 7 dígitos (ej. 0569302)."@es ;
     rdfs:isDefinedBy <https://www.sedecatro.gob.es> .
 
-catastro:propertyReference
+edintcat:propertyReference
     a owl:DatatypeProperty ;
     rdfs:label "property reference"@en ;
     rdfs:label "referencia de inmueble"@es ;
-    rdfs:domain catastro:CadastralReference ;
+    rdfs:domain edintcat:CadastralReference ;
     rdfs:range xsd:string ;
     rdfs:comment "The property reference part including check digit. Format: alphanumeric with check (e.g., TF8006N0001HZ)."@en ;
     rdfs:comment "La parte de referencia de inmueble incluyendo dígito de control. Formato: alfanumérico con control (ej. TF8006N0001HZ)."@es ;
     rdfs:isDefinedBy <https://www.sedecatastro.gob.es> .
 
-catastro:participation
+edintcat:participation
     a owl:DatatypeProperty ;
     rdfs:label "participation"@en ;
     rdfs:label "participación"@es ;
-    rdfs:domain catastro:CadastralProperty ;
+    rdfs:domain edintcat:CadastralProperty ;
     rdfs:range xsd:decimal ;
     qudt:applicableUnit qudtunit:PCT ;
     rdfs:comment "Percentage of participation in common elements of the parcel or construction."@en ;
     rdfs:comment "Porcentaje de participación en elementos comunes de la parcela o construcción."@es .
 
-catastro:supportPercentage
+edintcat:supportPercentage
     a owl:DatatypeProperty ;
     rdfs:label "support percentage"@en ;
     rdfs:label "porcentaje de soporte"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:decimal ;
     qudt:applicableUnit qudtunit:PCT ;
     rdfs:comment "Percentage of the construction area that is considered support area (common elements)."@en ;
     rdfs:comment "Porcentaje del área de construcción que se considera área de soporte (elementos comunes)."@es .
 
-catastro:constructionYear
+edintcat:constructionYear
     a owl:DatatypeProperty ;
     rdfs:label "construction year"@en ;
     rdfs:label "año de construcción"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:integer ;
     rdfs:comment "Year in which the building was constructed."@en ;
     rdfs:comment "Año en que se construyó el edificio."@es .
 
-catastro:numberOfFloors
+edintcat:numberOfFloors
     a owl:DatatypeProperty ;
     rdfs:label "number of floors"@en ;
     rdfs:label "número de plantas"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:integer ;
     rdfs:comment "Number of floors above ground."@en ;
     rdfs:comment "Número de plantas sobre el suelo."@es .
 
-catastro:numberOfPremises
+edintcat:numberOfPremises
     a owl:DatatypeProperty ;
     rdfs:label "number of premises"@en ;
     rdfs:label "número de locales"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:integer ;
     rdfs:comment "Number of units or premises within the construction."@en ;
     rdfs:comment "Número de unidades o locales dentro de la construcción."@es .
 
-catastro:numberOfDwellings
+edintcat:numberOfDwellings
     a owl:DatatypeProperty ;
     rdfs:label "number of dwellings"@en ;
     rdfs:label "número de viviendas"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:integer ;
     rdfs:comment "Number of dwellings within the construction."@en ;
     rdfs:comment "Número de viviendas dentro de la construcción."@es .
 
-catastro:staircase
+edintcat:staircase
     a owl:DatatypeProperty ;
     rdfs:label "staircase"@en ;
     rdfs:label "escalera"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:string ;
     rdfs:comment "Staircase identifier for a construction unit within a building."@en ;
     rdfs:comment "Identificador de escalera para una unidad de construcción dentro de un edificio."@es .
 
-catastro:floor
+edintcat:floor
     a owl:DatatypeProperty ;
     rdfs:label "floor"@en ;
     rdfs:label "planta"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:string ;
     rdfs:comment "Floor level identifier for a construction unit (can include basement levels like -1, -2)."@en ;
     rdfs:comment "Identificador de planta para una unidad de construcción (puede incluir plantas sótano como -1, -2)."@es .
 
-catastro:door
+edintcat:door
     a owl:DatatypeProperty ;
     rdfs:label "door"@en ;
     rdfs:label "puerta"@es ;
-    rdfs:domain catastro:CadastralConstruction ;
+    rdfs:domain edintcat:CadastralConstruction ;
     rdfs:range xsd:string ;
     rdfs:comment "Door or unit identifier within a floor and staircase."@en ;
     rdfs:comment "Identificador de puerta o unidad dentro de una planta y escalera."@es .
 
-catastro:renovationType
+edintcat:renovationType
     a owl:DatatypeProperty ;
     rdfs:label "renovation type"@en ;
     rdfs:label "tipo de reforma"@es ;
-    rdfs:domain catastro:Renovation ;
+    rdfs:domain edintcat:Renovation ;
     rdfs:range xsd:string ;
     rdfs:comment "Type of renovation performed."@en ;
     rdfs:comment "Tipo de reforma realizada."@es .
 
-catastro:renovationDate
+edintcat:renovationDate
     a owl:DatatypeProperty ;
     rdfs:label "renovation date"@en ;
     rdfs:label "fecha de reforma"@es ;
-    rdfs:domain catastro:Renovation ;
+    rdfs:domain edintcat:Renovation ;
     rdfs:range xsd:date ;
     rdfs:comment "Date when the renovation was performed."@en ;
     rdfs:comment "Fecha en que se realizó la reforma."@es .
