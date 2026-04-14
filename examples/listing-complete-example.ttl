@@ -1,0 +1,108 @@
+@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix ex: <http://example.org/> .
+
+# Complete Listing Example: Multiple Properties and Transactions
+# Ejemplo Completo de Anuncio: Múltiples Propiedades y Transacciones
+
+# Listing 1: Dwelling for sale (active)
+# Anuncio 1: Vivienda en venta (activo)
+ex:Listing003 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-003" ;
+    dcterms:title "Vivienda familiar en venta en Valencia" ;
+    dcterms:title "Family dwelling for sale in Valencia"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V1A> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty003 .
+
+# Listing 2: Office for rent (active)
+# Anuncio 2: Oficina en alquiler (activo)
+ex:Listing004 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-004" ;
+    dcterms:title "Oficina moderna en alquiler en Sevilla" ;
+    dcterms:title "Modern office for rent in Seville"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V2B> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/alquiler> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty004 .
+
+# Listing 3: Warehouse for sale (inactive)
+# Anuncio 3: Nave en venta (inactivo)
+ex:Listing005 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-005" ;
+    dcterms:title "Nave industrial en venta en Zaragoza" ;
+    dcterms:title "Industrial warehouse for sale in Zaragoza"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V2C> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:isActive false ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty005 .
+
+# Listing 4: Commercial property (parcel) for sale (active)
+# Anuncio 4: Solar en venta (activo)
+ex:Listing006 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-006" ;
+    dcterms:title "Solar urbanizable en venta en Bilbao" ;
+    dcterms:title "Urban plot for sale in Bilbao"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V4> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralParcel001 .
+
+# Cadastral Entities / Entidades Catastrales
+ex:CadastralProperty003 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "5556667CC7890D0003VA" ;
+    catastro:hasAddress ex:Address003 ;
+    geo:hasGeometry ex:Geometry003 .
+
+ex:CadastralProperty004 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "6667778DD8901E0004SE" ;
+    catastro:hasAddress ex:Address004 ;
+    geo:hasGeometry ex:Geometry004 .
+
+ex:CadastralProperty005 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "7778889EE9012F0005ZA" ;
+    catastro:hasAddress ex:Address005 ;
+    geo:hasGeometry ex:Geometry005 .
+
+ex:CadastralParcel001 a catastro:CadastralParcel ;
+    catastro:referenceCatastral "8889990FF0123G0006BI" ;
+    geo:hasGeometry ex:Geometry006 .
+
+# Addresses / Direcciones
+ex:Address003 a catastro:Address ;
+    catastro:roadName "Calle del Paseo" ;
+    catastro:roadNumber "25" ;
+    catastro:zipCode "46001" ;
+    catastro:city "Valencia" ;
+    catastro:province "Valencia" .
+
+ex:Address004 a catastro:Address ;
+    catastro:roadName "Avenida de la Constitución" ;
+    catastro:roadNumber "78" ;
+    catastro:zipCode "41001" ;
+    catastro:city "Sevilla" ;
+    catastro:province "Sevilla" .
+
+ex:Address005 a catastro:Address ;
+    catastro:roadName "Polígono Industrial Los Olivos" ;
+    catastro:roadNumber "Calle 3, Nave 12" ;
+    catastro:zipCode "50001" ;
+    catastro:city "Zaragoza" ;
+    catastro:province "Zaragoza" .
+
+# Geometries / Geometrías
+ex:Geometry003 a geo:Geometry ;
+    geo:asWKT "POINT(-0.3763 39.4699)"^^geo:wktLiteral .
+
+ex:Geometry004 a geo:Geometry ;
+    geo:asWKT "POINT(-5.9845 37.3891)"^^geo:wktLiteral .
+
+ex:Geometry005 a geo:Geometry ;
+    geo:asWKT "POINT(-1.0062 41.6488)"^^geo:wktLiteral .
+
+ex:Geometry006 a geo:Geometry ;
+    geo:asWKT "POINT(-2.9345 43.2630)"^^geo:wktLiteral .

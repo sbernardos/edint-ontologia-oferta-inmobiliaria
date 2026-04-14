@@ -1,0 +1,33 @@
+@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix ex: <http://example.org/> .
+
+# Sale Listing Example: Residential Dwelling
+# Ejemplo de Anuncio de Venta: Vivienda Residencial
+
+ex:Listing001 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-001" ;
+    dcterms:title "Vivienda en venta en Madrid" ;
+    dcterms:title "Dwelling for sale in Madrid"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V1A> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty001 .
+
+ex:CadastralProperty001 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "9876543BC4567N0001WO" ;
+    catastro:hasAddress ex:Address001 ;
+    geo:hasGeometry ex:Geometry001 .
+
+ex:Address001 a catastro:Address ;
+    catastro:roadName "Calle Mayor" ;
+    catastro:roadNumber "15" ;
+    catastro:zipCode "28013" ;
+    catastro:city "Madrid" ;
+    catastro:province "Madrid" .
+
+ex:Geometry001 a geo:Geometry ;
+    geo:asWKT "POINT(-3.7073 40.4168)"^^geo:wktLiteral .
