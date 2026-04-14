@@ -1,0 +1,29 @@
+PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ04: What properties does a property have in a sale listing?
+# SPANISH: ¿Qué propiedades tiene un inmueble en venta?
+
+SELECT DISTINCT ?listing ?listingId ?propertyType ?propertyLabelEs ?propertyTypeLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           edintinm:propertyType ?propertyType ;
+           edintinm:transactionType ?transactionType .
+  
+  ?transactionType skos:prefLabel ?transactionLabel .
+  FILTER (STRLCASE(STR(?transactionLabel)) = "venta" || 
+         STRLCASE(STR(?transactionLabel)) = "sale")
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabelEs .
+    FILTER (lang(?propertyLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?propertyType skos:prefLabel ?propertyTypeLabelEs .
+    FILTER (lang(?propertyTypeLabelEs) = "es")
+  }
+}
+
+ORDER BY ?listingId

@@ -1,0 +1,27 @@
+PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ02: What information is contained in a real estate listing?
+# SPANISH: ¿Qué información contiene un anuncio inmobiliario?
+
+SELECT ?listing ?listingId ?isActive ?propertyTypeLabelEs ?transactionTypeLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:isActive ?isActive .
+  
+  OPTIONAL {
+    ?listing edintinm:propertyType ?propertyType .
+    ?propertyType rdfs:label ?propertyTypeLabelEs .
+    FILTER (lang(?propertyTypeLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?listing edintinm:transactionType ?transactionType .
+    ?transactionType rdfs:label ?transactionTypeLabelEs .
+    FILTER (lang(?transactionTypeLabelEs) = "es")
+  }
+}
+
+ORDER BY ?listingId

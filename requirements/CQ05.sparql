@@ -1,0 +1,20 @@
+PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# CQ05: What is the current status of a real estate listing?
+# SPANISH: ¿Cuál es el estado actual de un anuncio inmobiliario?
+
+SELECT ?listing ?listingId ?isActive ?statusLabel
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:isActive ?isActive .
+  
+  BIND(
+    IF(?isActive = true, 
+       "Activo"^^<http://www.w3.org/2001/XMLSchema#string>, 
+       "Inactivo"^^<http://www.w3.org/2001/XMLSchema#string>)
+    AS ?statusLabel)
+}
+
+ORDER BY ?listingId

@@ -1,0 +1,27 @@
+PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ03: How is a listing related to a cadastral entity?
+# SPANISH: ¿Cómo se relaciona un anuncio con una entidad catastral?
+
+SELECT ?listing ?listingId ?cadastralEntity ?entityType ?entityLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           dcterms:identifier ?listingId ;
+           edintinm:refersToCadastralEntity ?cadastralEntity .
+  
+  ?cadastralEntity rdfs:label ?entityLabelEs .
+  FILTER (lang(?entityLabelEs) = "es")
+  
+  BIND(
+    IF(STRENDS(STR(?cadastralEntity), "CadastralParcel"), 
+       "Parcela Catastral",
+       IF(STRENDS(STR(?cadastralEntity), "CadastralProperty"),
+          "Inmueble Catastral",
+          "Entidad Desconocida")
+    ) AS ?entityType
+  )
+}
+
+ORDER BY ?listingId
