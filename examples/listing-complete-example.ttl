@@ -14,8 +14,8 @@ ex:Listing003 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-003" ;
     dcterms:title "Vivienda familiar en venta en Valencia" ;
     dcterms:title "Family dwelling for sale in Valencia"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V1A> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/vivienda> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty003 .
 
@@ -25,8 +25,8 @@ ex:Listing004 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-004" ;
     dcterms:title "Oficina moderna en alquiler en Sevilla" ;
     dcterms:title "Modern office for rent in Seville"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V2B> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/alquiler> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/oficina> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Alquiler> ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty004 .
 
@@ -36,8 +36,8 @@ ex:Listing005 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-005" ;
     dcterms:title "Nave industrial en venta en Zaragoza" ;
     dcterms:title "Industrial warehouse for sale in Zaragoza"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V2C> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/nave-industrial> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
     edintinm:isActive false ;
     edintinm:refersToCadastralEntity ex:CadastralProperty005 .
 
@@ -47,8 +47,8 @@ ex:Listing006 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-006" ;
     dcterms:title "Solar urbanizable en venta en Bilbao" ;
     dcterms:title "Urban plot for sale in Bilbao"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V4> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/solar> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralParcel001 .
 

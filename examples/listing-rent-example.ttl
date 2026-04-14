@@ -12,8 +12,8 @@ ex:Listing002 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-002" ;
     dcterms:title "Local comercial en alquiler en Barcelona" ;
     dcterms:title "Commercial local for rent in Barcelona"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V2A> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/alquiler> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/local-comercial> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Alquiler> ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty002 .
 

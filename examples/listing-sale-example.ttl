@@ -12,8 +12,8 @@ ex:Listing001 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-001" ;
     dcterms:title "Vivienda en venta en Madrid" ;
     dcterms:title "Dwelling for sale in Madrid"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/V1A> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/venta> ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/vivienda> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty001 .
 
