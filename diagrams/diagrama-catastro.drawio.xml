@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" version="29.6.6">
+  <diagram name="Ontologia Catastro" id="catastro-diagram">
+    <mxGraphModel dx="3206" dy="1938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="edge-time-sub" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;endFill=0;html=1;fontSize=12;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-870" y="-550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skos-use" parent="1" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:Uso&amp;gt;&lt;/div&gt;&lt;div&gt;Tipo (Uso)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="-10" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="skos-class" parent="1" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:Clase&amp;gt;&lt;/div&gt;&lt;div&gt;(Clasificación)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="-280" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="parcel" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontSize=12;" value="&lt;b&gt;edintcat:CadastralParcel&lt;/b&gt;&lt;div&gt;(Parcela Catastral)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="220" x="-840" y="-520" as="geometry" />
+        </mxCell>
+        <mxCell id="construction" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontSize=12;" value="&lt;b&gt;edintcat:CadastralConstruction&lt;/b&gt;&lt;div&gt;(Construcción Catastral)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="260" x="-30" y="-520" as="geometry" />
+        </mxCell>
+        <mxCell id="reference" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontSize=12;" value="&lt;b&gt;edintcat:CadastralReference&lt;/b&gt;&lt;div&gt;(Referencia Catastral)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="230" x="-455" y="-360" as="geometry" />
+        </mxCell>
+        <mxCell id="renovation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontSize=12;" value="&lt;b&gt;edintcat:Renovation&lt;/b&gt;&lt;div&gt;(Reforma)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="180" x="10" y="-360" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-parcel-feature" edge="1" parent="1" source="parcel" style="endArrow=block;html=1;rounded=0;endFill=0;fontSize=12;edgeStyle=orthogonalEdgeStyle;" target="geo-feature">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-760" y="-530" />
+              <mxPoint x="-760" y="-530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-feature" edge="1" parent="1" source="property" style="endArrow=block;html=1;rounded=0;endFill=0;fontSize=12;edgeStyle=orthogonalEdgeStyle;" target="geo-feature">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-400" y="-540" />
+              <mxPoint x="-740" y="-540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-construction-feature" edge="1" parent="1" source="construction" style="endArrow=block;html=1;rounded=0;endFill=0;fontSize=12;edgeStyle=orthogonalEdgeStyle;" target="geo-feature">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="-560" />
+              <mxPoint x="-720" y="-560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-parcel-property" edge="1" parent="1" source="parcel" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="property">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-parcel-property-label" connectable="0" parent="edge-parcel-property" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasCadastralProperty" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-construction" edge="1" parent="1" source="property" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="construction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-property-construction-label" connectable="0" parent="edge-property-construction" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasCadastralConstruction" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-parcel-ref" edge="1" parent="1" source="parcel" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="reference">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-730" y="-440" />
+              <mxPoint x="-400" y="-440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-parcel-ref-label" connectable="0" parent="edge-parcel-ref" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasCadastralReference" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint x="180" y="27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-ref" edge="1" parent="1" source="property" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="reference">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-280" y="-400" />
+              <mxPoint x="-280" y="-400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-ref-label" connectable="0" parent="edge-property-ref" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasCadastralReference" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint y="19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-construction-reno" edge="1" parent="1" source="construction" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="renovation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="-420" />
+              <mxPoint x="100" y="-420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-construction-reno-label" connectable="0" parent="edge-construction-reno" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasRenovation" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-portal" edge="1" parent="1" source="property" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="callejero-portal">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-360" y="-600" />
+              <mxPoint x="-940" y="-600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-property-portal-label" connectable="0" parent="edge-property-portal" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasAddress" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-const-use" edge="1" parent="1" source="construction" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="UohS8GtpW3sty2a-juwX-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="-560" />
+              <mxPoint x="400" y="-560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-const-use-label" connectable="0" parent="edge-const-use" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasIntendedUse" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint x="-8" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-prop-use" edge="1" parent="1" source="property" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="skos-use">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-280" y="-580" />
+              <mxPoint x="80" y="-580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-prop-use-label" connectable="0" parent="edge-prop-use" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasUseType" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-prop-class" edge="1" parent="1" source="property" style="endArrow=classic;html=1;rounded=0;endSize=8;arcSize=0;edgeStyle=orthogonalEdgeStyle;" target="skos-class">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-320" y="-600" />
+              <mxPoint x="-155" y="-600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-prop-class-label" connectable="0" parent="edge-prop-class" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;labelBackgroundColor=#ffffff;" value="hasClass" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="property" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fontSize=12;" value="&lt;b&gt;edintcat:CadastralProperty&lt;/b&gt;&lt;div&gt;(Inmueble Catastral)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="230" x="-455" y="-520" as="geometry" />
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-3" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="100" width="450" x="-830" y="-760" as="geometry" />
+        </mxCell>
+        <mxCell id="geo-group" parent="UohS8GtpW3sty2a-juwX-3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;fontSize=11;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="100" width="450" as="geometry" />
+        </mxCell>
+        <mxCell id="geo-label" parent="UohS8GtpW3sty2a-juwX-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=0;fontSize=12;" value="&lt;b&gt;geo&lt;/b&gt; (GeoSPARQL)" vertex="1">
+          <mxGeometry height="20" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="geo-feature" parent="UohS8GtpW3sty2a-juwX-3" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fontSize=12;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;geo:Feature&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="20" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="geo-geometry" parent="UohS8GtpW3sty2a-juwX-3" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fontSize=12;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;geo:Geometry&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="300" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-geo-hasgeom" edge="1" parent="UohS8GtpW3sty2a-juwX-3" source="geo-feature" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;rounded=0;endSize=8;startSize=8;endFill=0;startArrow=classic;startFill=1;fontSize=12;" target="geo-geometry">
+          <mxGeometry relative="1" width="100" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-geo-hasgeom-label" connectable="0" parent="edge-geo-hasgeom" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" value="geo:hasGeometry" vertex="1">
+          <mxGeometry relative="1" x="0.1" y="1" as="geometry">
+            <mxPoint x="10" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-6" parent="1" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:Destino&amp;gt;&lt;/div&gt;&lt;div&gt;(Destino)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="270" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-7" edge="1" parent="1" source="parcel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.389;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endSize=8;" target="callejero-portal">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1130" y="-690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-8" connectable="0" parent="UohS8GtpW3sty2a-juwX-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="hasAddress" vertex="1">
+          <mxGeometry relative="1" x="-0.2739" y="-2" as="geometry">
+            <mxPoint x="22" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-10" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="100" width="160" x="-1040" y="-760" as="geometry" />
+        </mxCell>
+        <mxCell id="callejero-group" parent="UohS8GtpW3sty2a-juwX-10" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;fontSize=11;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="100" width="160" as="geometry" />
+        </mxCell>
+        <mxCell id="callejero-label" parent="UohS8GtpW3sty2a-juwX-10" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=0;fontSize=12;" value="&amp;nbsp;&lt;b&gt;callejero&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="53.33333333333333" as="geometry" />
+        </mxCell>
+        <mxCell id="callejero-portal" parent="UohS8GtpW3sty2a-juwX-10" style="verticalAlign=middle;align=center;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fontSize=12;" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;callejero:Portal&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="116.67" x="13.329999999999927" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="UohS8GtpW3sty2a-juwX-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DUDOSO!" vertex="1">
+          <mxGeometry height="30" width="60" x="410" y="-670" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
