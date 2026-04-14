@@ -1,0 +1,96 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/0.1.0> ;
+    owl:versionInfo "0.1.0" ;
+    dct:title "Controlled Vocabulary of Spanish Cadastre Property Uses"@en ;
+    dct:title "Vocabulario Controlado de Usos de Inmuebles del Catastro Español"@es ;
+    dct:description "SKOS concept scheme defining property usage types from Spanish Cadastre for real estate ontology."@en ;
+    dct:description "Esquema de conceptos SKOS que define los tipos de uso de inmuebles del Catastro Español para la ontología inmobiliaria."@es ;
+    dct:issued "2026-04-14"^^xsd:date ;
+    dct:modified "2026-04-14"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> .
+
+# =============================================================================
+# CONCEPT SCHEME
+# =============================================================================
+
+edintkos:Uso a skos:ConceptScheme ;
+    dct:issued "2026-04-14"^^xsd:date ;
+    dct:modified "2026-04-14"^^xsd:date ;
+    rdfs:label "Uso de Inmuebles del Catastro Español"@es ;
+    rdfs:label "Spanish Cadastre Property Uses"@en ;
+    skos:definition "Esquema de conceptos que define los usos de inmuebles según el Catastro Español."@es ;
+    skos:definition "Concept scheme defining property uses according to Spanish Cadastre."@en ;
+    skos:hasTopConcept edintkos-uso:vivienda, edintkos-uso:local-comercial, edintkos-uso:oficina, edintkos-uso:nave-industrial, edintkos-uso:solar .
+
+# =============================================================================
+# CONCEPTS
+# =============================================================================
+
+edintkos-uso:vivienda a skos:Concept ;
+    rdfs:label "Vivienda"@es ;
+    rdfs:label "Dwelling"@en ;
+    skos:prefLabel "Vivienda"@es ;
+    skos:prefLabel "Dwelling"@en ;
+    skos:definition "Uso residencial para vivienda habitual o segunda residencia."@es ;
+    skos:definition "Residential use for habitual or second home."@en ;
+    skos:inScheme edintkos:Uso ;
+    skos:notation "V1A" ;
+    skos:topConceptOf edintkos:Uso .
+
+edintkos-uso:local-comercial a skos:Concept ;
+    rdfs:label "Local Comercial"@es ;
+    rdfs:label "Commercial Local"@en ;
+    skos:prefLabel "Local Comercial"@es ;
+    skos:prefLabel "Commercial Local"@en ;
+    skos:definition "Uso comercial para establecimientos de venta al público."@es ;
+    skos:definition "Commercial use for retail establishments."@en ;
+    skos:inScheme edintkos:Uso ;
+    skos:notation "V2A" ;
+    skos:topConceptOf edintkos:Uso .
+
+edintkos-uso:oficina a skos:Concept ;
+    rdfs:label "Oficina"@es ;
+    rdfs:label "Office"@en ;
+    skos:prefLabel "Oficina"@es ;
+    skos:prefLabel "Office"@en ;
+    skos:definition "Uso de oficinas y despachos profesionales."@es ;
+    skos:definition "Office and professional practice use."@en ;
+    skos:inScheme edintkos:Uso ;
+    skos:notation "V2B" ;
+    skos:topConceptOf edintkos:Uso .
+
+edintkos-uso:nave-industrial a skos:Concept ;
+    rdfs:label "Nave Industrial"@es ;
+    rdfs:label "Industrial Warehouse"@en ;
+    skos:prefLabel "Nave Industrial"@es ;
+    skos:prefLabel "Industrial Warehouse"@en ;
+    skos:definition "Uso industrial para naves y almacenes."@es ;
+    skos:definition "Industrial use for warehouses and storage facilities."@en ;
+    skos:inScheme edintkos:Uso ;
+    skos:notation "V2C" ;
+    skos:topConceptOf edintkos:Uso .
+
+edintkos-uso:solar a skos:Concept ;
+    rdfs:label "Solar"@es ;
+    rdfs:label "Plot"@en ;
+    skos:prefLabel "Solar"@es ;
+    skos:prefLabel "Plot"@en ;
+    skos:definition "Terreno sin edificar, susceptible de construcción."@es ;
+    skos:definition "Unbuilt land, suitable for construction."@en ;
+    skos:inScheme edintkos:Uso ;
+    skos:notation "V4" ;
+    skos:topConceptOf edintkos:Uso .
