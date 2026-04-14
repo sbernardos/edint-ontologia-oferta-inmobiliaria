@@ -97,7 +97,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 3/-2/01"@es ;
     rdfs:label "ALMACEN 3/-2/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -118,7 +118,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 3/-2/02"@es ;
     rdfs:label "ENSEÑANZA 3/-2/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -139,7 +139,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 4/-2/01"@es ;
     rdfs:label "ALMACEN 4/-2/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -160,7 +160,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 4/-2/02"@es ;
     rdfs:label "APARCAMIENTO 4/-2/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -181,7 +181,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/-2/03"@es ;
     rdfs:label "ENSEÑANZA 4/-2/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -202,7 +202,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/-2/04"@es ;
     rdfs:label "ENSEÑANZA 4/-2/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -223,7 +223,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 5/-2/01"@es ;
     rdfs:label "ALMACEN 5/-2/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -244,7 +244,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 5/-2/02"@es ;
     rdfs:label "APARCAMIENTO 5/-2/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -265,7 +265,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "SOPORT. 50% 5/-2/03"@es ;
     rdfs:label "SOPORT. 50% 5/-2/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -287,7 +287,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 6/-2/01"@es ;
     rdfs:label "ALMACEN 6/-2/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -308,7 +308,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 7/-2/01"@es ;
     rdfs:label "ENSEÑANZA 7/-2/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -329,7 +329,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 1/-1/01"@es ;
     rdfs:label "ALMACEN 1/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -350,7 +350,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 2/-1/01"@es ;
     rdfs:label "ALMACEN 2/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -371,7 +371,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 2/-1/02"@es ;
     rdfs:label "ENSEÑANZA 2/-1/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -392,7 +392,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 3/-1/01"@es ;
     rdfs:label "ENSEÑANZA 3/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -413,7 +413,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 4/-1/01"@es ;
     rdfs:label "ALMACEN 4/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -434,7 +434,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 4/-1/02"@es ;
     rdfs:label "APARCAMIENTO 4/-1/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -455,7 +455,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/-1/03"@es ;
     rdfs:label "ENSEÑANZA 4/-1/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -476,7 +476,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/-1/04"@es ;
     rdfs:label "ENSEÑANZA 4/-1/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -497,7 +497,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 5/-1/01"@es ;
     rdfs:label "ENSEÑANZA 5/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -518,7 +518,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "SOPORT. 50% 5/-1/02"@es ;
     rdfs:label "SOPORT. 50% 5/-1/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -540,7 +540,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 6/-1/01"@es ;
     rdfs:label "APARCAMIENTO 6/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -561,7 +561,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 6/-1/02"@es ;
     rdfs:label "ENSEÑANZA 6/-1/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -582,7 +582,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 7/-1/01"@es ;
     rdfs:label "ENSEÑANZA 7/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -603,7 +603,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 8/-1/01"@es ;
     rdfs:label "ENSEÑANZA 8/-1/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -624,7 +624,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 8/-1/02"@es ;
     rdfs:label "ENSEÑANZA 8/-1/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -645,7 +645,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 1/00/01"@es ;
     rdfs:label "ENSEÑANZA 1/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -666,7 +666,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "SOPORT. 50% 1/00/02"@es ;
     rdfs:label "SOPORT. 50% 1/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -688,7 +688,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 2/00/01"@es ;
     rdfs:label "ENSEÑANZA 2/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -709,7 +709,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 3/00/01"@es ;
     rdfs:label "ENSEÑANZA 3/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -730,7 +730,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 4/00/01"@es ;
     rdfs:label "ALMACEN 4/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -751,7 +751,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/00/03"@es ;
     rdfs:label "ENSEÑANZA 4/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -772,7 +772,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/00/04"@es ;
     rdfs:label "ENSEÑANZA 4/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -793,7 +793,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/00/05"@es ;
     rdfs:label "ENSEÑANZA 4/00/05"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -814,7 +814,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "SOPORT. 50% 4/00/06"@es ;
     rdfs:label "SOPORT. 50% 4/00/06"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -836,7 +836,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 5/00/01"@es ;
     rdfs:label "ENSEÑANZA 5/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -857,7 +857,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 5/00/02"@es ;
     rdfs:label "APARCAMIENTO 5/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -878,7 +878,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 6/00/01"@es ;
     rdfs:label "ENSEÑANZA 6/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -899,7 +899,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 6/00/02"@es ;
     rdfs:label "APARCAMIENTO 6/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -920,7 +920,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 7/00/01"@es ;
     rdfs:label "APARCAMIENTO 7/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -941,7 +941,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 7/00/02"@es ;
     rdfs:label "APARCAMIENTO 7/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -962,7 +962,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 7/00/03"@es ;
     rdfs:label "ENSEÑANZA 7/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -983,7 +983,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 8/00/01"@es ;
     rdfs:label "APARCAMIENTO 8/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1004,7 +1004,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 8/00/02"@es ;
     rdfs:label "ENSEÑANZA 8/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1025,7 +1025,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 8/00/03"@es ;
     rdfs:label "APARCAMIENTO 8/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1046,7 +1046,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "INDUSTRIAL 8/00/04"@es ;
     rdfs:label "INDUSTRIAL 8/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Industrial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1067,7 +1067,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 9/00/01"@es ;
     rdfs:label "ALMACEN 9/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1088,7 +1088,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 9/00/02"@es ;
     rdfs:label "APARCAMIENTO 9/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1109,7 +1109,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 9/00/03"@es ;
     rdfs:label "ENSEÑANZA 9/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1130,7 +1130,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "INDUSTRIAL 9/00/04"@es ;
     rdfs:label "INDUSTRIAL 9/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Industrial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1151,7 +1151,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 10/00/01"@es ;
     rdfs:label "APARCAMIENTO 10/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1172,7 +1172,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 10/00/02"@es ;
     rdfs:label "ENSEÑANZA 10/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1193,7 +1193,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 10/00/03"@es ;
     rdfs:label "APARCAMIENTO 10/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1214,7 +1214,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 10/00/04"@es ;
     rdfs:label "APARCAMIENTO 10/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1235,7 +1235,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "INDUSTRIAL 10/00/05"@es ;
     rdfs:label "INDUSTRIAL 10/00/05"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Industrial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1256,7 +1256,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/01"@es ;
     rdfs:label "DEPORTIVO 11/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1277,7 +1277,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/02"@es ;
     rdfs:label "DEPORTIVO 11/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1298,7 +1298,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/03"@es ;
     rdfs:label "DEPORTIVO 11/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1319,7 +1319,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/04"@es ;
     rdfs:label "DEPORTIVO 11/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1340,7 +1340,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/05"@es ;
     rdfs:label "DEPORTIVO 11/00/05"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1361,7 +1361,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "DEPORTIVO 11/00/06"@es ;
     rdfs:label "DEPORTIVO 11/00/06"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Sports ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1382,7 +1382,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 11/00/07"@es ;
     rdfs:label "APARCAMIENTO 11/00/07"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1403,7 +1403,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "COMERCIO 12/00/01"@es ;
     rdfs:label "COMERCIO 12/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Commercial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1424,7 +1424,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "INDUSTRIAL 13/00/01"@es ;
     rdfs:label "INDUSTRIAL 13/00/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Industrial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1445,7 +1445,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/02"@es ;
     rdfs:label "ALMACEN 13/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1466,7 +1466,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/03"@es ;
     rdfs:label "ALMACEN 13/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1487,7 +1487,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/04"@es ;
     rdfs:label "ALMACEN 13/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1508,7 +1508,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/05"@es ;
     rdfs:label "ALMACEN 13/00/05"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1529,7 +1529,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/06"@es ;
     rdfs:label "ALMACEN 13/00/06"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1550,7 +1550,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/07"@es ;
     rdfs:label "ALMACEN 13/00/07"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1571,7 +1571,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/08"@es ;
     rdfs:label "ALMACEN 13/00/08"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1592,7 +1592,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/15"@es ;
     rdfs:label "ALMACEN 13/00/15"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1613,7 +1613,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 13/00/16"@es ;
     rdfs:label "ALMACEN 13/00/16"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1634,7 +1634,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 1/01/01"@es ;
     rdfs:label "ENSEÑANZA 1/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1655,7 +1655,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 2/01/01"@es ;
     rdfs:label "ENSEÑANZA 2/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1676,7 +1676,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 3/01/01"@es ;
     rdfs:label "ENSEÑANZA 3/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1697,7 +1697,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/01/01"@es ;
     rdfs:label "ENSEÑANZA 4/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1718,7 +1718,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 5/01/01"@es ;
     rdfs:label "ENSEÑANZA 5/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1739,7 +1739,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 6/01/01"@es ;
     rdfs:label "ENSEÑANZA 6/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1760,7 +1760,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 7/01/01"@es ;
     rdfs:label "ENSEÑANZA 7/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1781,7 +1781,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 8/01/01"@es ;
     rdfs:label "ENSEÑANZA 8/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1802,7 +1802,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 10/01/01"@es ;
     rdfs:label "ENSEÑANZA 10/01/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1823,7 +1823,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "SOPORT. 50% 10/01/02"@es ;
     rdfs:label "SOPORT. 50% 10/01/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1845,7 +1845,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 1/02/01"@es ;
     rdfs:label "ENSEÑANZA 1/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1866,7 +1866,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 2/02/01"@es ;
     rdfs:label "ENSEÑANZA 2/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1887,7 +1887,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/02/01"@es ;
     rdfs:label "ENSEÑANZA 4/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1908,7 +1908,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 7/02/01"@es ;
     rdfs:label "ENSEÑANZA 7/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1929,7 +1929,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 8/02/01"@es ;
     rdfs:label "ENSEÑANZA 8/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1950,7 +1950,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 10/02/01"@es ;
     rdfs:label "ENSEÑANZA 10/02/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1971,7 +1971,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ALMACEN 2/03/01"@es ;
     rdfs:label "ALMACEN 2/03/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -1992,7 +1992,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/03/01"@es ;
     rdfs:label "ENSEÑANZA 4/03/01"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2013,7 +2013,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/03/02"@es ;
     rdfs:label "ENSEÑANZA 4/03/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2034,7 +2034,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "ENSEÑANZA 4/03/03"@es ;
     rdfs:label "ENSEÑANZA 4/03/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Educational ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2055,7 +2055,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 1/00/03"@es ;
     rdfs:label "APARCAMIENTO 1/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2076,7 +2076,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "INDUSTRIAL 1/00/04"@es ;
     rdfs:label "INDUSTRIAL 1/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:Industrial ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2097,7 +2097,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 3/00/02"@es ;
     rdfs:label "APARCAMIENTO 3/00/02"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2118,7 +2118,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 3/00/03"@es ;
     rdfs:label "APARCAMIENTO 3/00/03"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
@@ -2139,7 +2139,7 @@
     a catastro:CadastralConstruction ;
     rdfs:label "APARCAMIENTO 3/00/04"@es ;
     rdfs:label "APARCAMIENTO 3/00/04"@en ;
-    catastro:constructionYear "2012"^^xsd:integer ;
+    catastro:constructionYear "2012"^^xsd:gYear ;
     catastro:hasUse edintkos-uso:StorageParking ;
     catastro:hasCondition edintkos-estado:Normal ;
     catastro:onCadastralProperty :Inmueble_8942103VK2793S0001UO ;
