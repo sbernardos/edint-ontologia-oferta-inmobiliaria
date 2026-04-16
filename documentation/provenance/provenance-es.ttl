@@ -1,0 +1,20 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0> a prov:Entity;
+	 dc:title "Ontología EDINT Inmobiliaria";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo :agent4;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria>;
+	 prov:wasGeneratedAt "Date created";
+.
+:agent0 a prov:Agent; foaf:name "Daniel Doña".
+:agent1 a prov:Agent; foaf:name "Edna Ruckhaus".
+:agent2 a prov:Agent; foaf:name "Lucía Sánchez".
+:agent3 a prov:Agent; foaf:name "Maria del Socorro Bernardos".
+:agent4 a prov:Agent; foaf:name "Oscar Corcho".

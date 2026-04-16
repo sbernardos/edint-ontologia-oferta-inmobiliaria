@@ -8,20 +8,6 @@
 
 @prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
 
-# =============================================================================
-# ONTOLOGY METADATA
-# =============================================================================
-
-<http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> a owl:Ontology ;
-    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/0.1.0> ;
-    owl:versionInfo "0.1.0" ;
-    dct:title "Controlled Vocabulary of Spanish Cadastre Property Uses"@en ;
-    dct:title "Vocabulario Controlado de Usos de Inmuebles del Catastro Español"@es ;
-    dct:description "SKOS concept scheme defining property usage types from Spanish Cadastre for real estate ontology."@en ;
-    dct:description "Esquema de conceptos SKOS que define los tipos de uso de inmuebles del Catastro Español para la ontología inmobiliaria."@es ;
-    dct:issued "2026-04-14"^^xsd:date ;
-    dct:modified "2026-04-14"^^xsd:date ;
-    cc:license <https://creativecommons.org/licenses/by/4.0/> .
 
 # =============================================================================
 # CONCEPT SCHEME
