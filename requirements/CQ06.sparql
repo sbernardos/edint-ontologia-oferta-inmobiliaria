@@ -1,0 +1,29 @@
+PREFIX edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ06: What types of properties can be advertised?
+# SPANISH: ¿Qué tipos de inmuebles se pueden anunciar?
+
+SELECT DISTINCT ?propertyType ?propertyLabel ?propertyLabelEs ?propertyPrefLabelEs
+WHERE {
+  ?listing a edintinm:RealEstateListing ;
+           edintinm:propertyType ?propertyType .
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabel .
+    FILTER (lang(?propertyLabel) = "en")
+  }
+  
+  OPTIONAL {
+    ?propertyType rdfs:label ?propertyLabelEs .
+    FILTER (lang(?propertyLabelEs) = "es")
+  }
+  
+  OPTIONAL {
+    ?propertyType skos:prefLabel ?propertyPrefLabelEs .
+    FILTER (lang(?propertyPrefLabelEs) = "es")
+  }
+}
+
+ORDER BY ?propertyLabelEs

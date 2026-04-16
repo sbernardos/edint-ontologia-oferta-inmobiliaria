@@ -1,0 +1,59 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
+
+# =============================================================================
+# CONCEPT SCHEME
+# =============================================================================
+
+edintkos:TransactionType a skos:ConceptScheme ;
+    dct:issued "2026-04-14"^^xsd:date ;
+    dct:modified "2026-04-14"^^xsd:date ;
+    rdfs:label "Tipos de Transacción Inmobiliaria"@es ;
+    rdfs:label "Real Estate Transaction Types"@en ;
+    skos:definition "Esquema de conceptos que define los tipos de transacción inmobiliaria en el contexto español."@es ;
+    skos:definition "Concept scheme defining real estate transaction types in the Spanish context."@en ;
+    skos:hasTopConcept edintkos-trans:Venta, edintkos-trans:Alquiler, edintkos-trans:Traspaso .
+
+# =============================================================================
+# CONCEPTS
+# =============================================================================
+
+edintkos-trans:Venta a skos:Concept ;
+    rdfs:label "Venta"@es ;
+    rdfs:label "Sale"@en ;
+    skos:prefLabel "Venta"@es ;
+    skos:prefLabel "Sale"@en ;
+    skos:definition "Transacción de compraventa de un inmueble, donde el propietario transfiere la propiedad a cambio de un pago monetario."@es ;
+    skos:definition "Purchase and sale transaction of a real estate property, where the owner transfers ownership in exchange for monetary payment."@en ;
+    skos:inScheme edintkos:TransactionType ;
+    skos:notation "V" ;
+    skos:topConceptOf edintkos:TransactionType .
+
+edintkos-trans:Alquiler a skos:Concept ;
+    rdfs:label "Alquiler"@es ;
+    rdfs:label "Rent"@en ;
+    skos:prefLabel "Alquiler"@es ;
+    skos:prefLabel "Rent"@en ;
+    skos:definition "Transacción de arrendamiento de un inmueble, donde el propietario cede el uso del inmueble a cambio de un pago periódico."@es ;
+    skos:definition "Lease transaction of a real estate property, where the owner grants use of the property in exchange for periodic payment."@en ;
+    skos:inScheme edintkos:TransactionType ;
+    skos:notation "A" ;
+    skos:topConceptOf edintkos:TransactionType .
+
+edintkos-trans:Traspaso a skos:Concept ;
+    rdfs:label "Traspaso"@es ;
+    rdfs:label "Transfer"@en ;
+    skos:prefLabel "Traspaso"@es ;
+    skos:prefLabel "Transfer"@en ;
+    skos:definition "Transacción de traspaso de un inmueble, típicamente para locales comerciales, donde se transfiere el derecho de uso y en algunos casos el arrendamiento vigente."@es ;
+    skos:definition "Transfer transaction of a real estate property, typically for commercial premises, where the right of use and in some cases the current lease are transferred."@en ;
+    skos:inScheme edintkos:TransactionType ;
+    skos:notation "T" ;
+    skos:topConceptOf edintkos:TransactionType .

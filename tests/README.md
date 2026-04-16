@@ -1,6 +1,6 @@
 # Pruebas de la ontología
 
-Esta carpeta contiene todas las **pruebas diseñadas para verificar que la ontología cumple con los requisitos definidos**.
+Esta carpeta contiene todas las **pruebas diseñadas para verificar que la ontología Inmobiliaria cumple con los requisitos definidos**.
 Estas pruebas garantizan que la ontología represente correctamente el conocimiento previsto, satisfaga las preguntas de competencia y esté alineada con las necesidades del dominio.
 
 # Propósito
@@ -15,10 +15,21 @@ Incluir cualqueir fichero o scripts utilizados para validar la ontología, como 
 
 - **Pruebas de Themis** — Pruebas automatizadas descritas usando  [Themis](https://themis.linkeddata.es/).
 - **Consultas SPARQL** — Consultas para comprobar que las preguntas de competencia pueden responderse utilizando la ontología. 
-- **Informes de validacón de SHACL** — Para verificar que los datos se ajustan a las restricciones de la ontología.  
+- **Informes de validacón de SHACL** — Para verificar que los datos se ajusten a las restricciones de la ontología.  
 - **Automatización de pruebas/scripts** — Implementados en Python, Java u otros lenguajes para ejecutar validaciones de la ontología.
 - **Datos para pruebas** — Ficheros RDF o Turtle files utilizados como input de la validación.  
 - **Informes** — Documentos informando o resumiendo el resultado de las pruebas.
+
+# Script de validación
+
+El script `validate.py` realiza las siguientes validaciones:
+
+1. **Parsing** — Verifica la sintaxis de todos los archivos TTL
+2. **Ontology self-check** — Comprueba la completitud y convenciones de la ontología Inmobiliaria
+3. **SKOS structural validation** — Valida los vocabularios SKOS (transaction-type)
+4. **SKOS-ontology linkage** — Verifica que los esquemas SKOS referenciados existen
+5. **Example conformance** — Comprueba que los ejemplos solo usan términos definidos
+6. **SHACL validation** — Valida ejemplos contra formas SHACL si existen
 
 # Formatos aceptados
 

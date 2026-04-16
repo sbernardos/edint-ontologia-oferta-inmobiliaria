@@ -1,0 +1,33 @@
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix ex: <http://example.org/> .
+
+# Rent Listing Example: Commercial Local
+# Ejemplo de Anuncio de Alquiler: Local Comercial
+
+ex:Listing002 a edintinm:RealEstateListing ;
+    dcterms:identifier "LIST-002" ;
+    dcterms:title "Local comercial en alquiler en Barcelona" ;
+    dcterms:title "Commercial local for rent in Barcelona"@en ;
+    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/local-comercial> ;
+    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Alquiler> ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty002 .
+
+ex:CadastralProperty002 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "1234567AB8901B0002ZA" ;
+    catastro:hasAddress ex:Address002 ;
+    geo:hasGeometry ex:Geometry002 .
+
+ex:Address002 a catastro:Address ;
+    catastro:roadName "Carrer de la Marina" ;
+    catastro:roadNumber "42" ;
+    catastro:zipCode "08005" ;
+    catastro:city "Barcelona" ;
+    catastro:province "Barcelona" .
+
+ex:Geometry002 a geo:Geometry ;
+    geo:asWKT "POINT(2.1993 41.3851)"^^geo:wktLiteral .

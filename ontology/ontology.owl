@@ -1,0 +1,138 @@
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+
+@prefix edintcat: <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0> ;
+    owl:versionInfo "0.1.0" ;
+    dcterms:title "Spanish Real Estate Listing Ontology"@en ;
+    dcterms:title "Ontología de Oferta Inmobiliaria Española"@es ;
+    dcterms:description "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en ;
+    dcterms:description "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es ;
+    dcterms:created "2026-04-14"^^xsd:date ;
+    dcterms:modified "2026-04-14"^^xsd:date ;
+    dcterms:creator "Daniel Doña"@es ,
+                    "Edna Ruckhaus" ,
+                    "Lucía Sánchez" ,
+                    "Maria del Socorro Bernardos" ,
+                    "Oscar Corcho" ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    owl:imports <http://vocab.linkeddata.es/datosabiertos/def/catastro/> ,
+                <http://www.opengis.net/ont/geosparql> ;
+    rdfs:comment "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en ;
+    rdfs:comment "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" ;
+    vann:preferredNamespacePrefix "edintinm" .
+
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:source a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+owl:versionIRI a owl:AnnotationProperty .
+owl:versionInfo a owl:AnnotationProperty .
+cc:license a owl:AnnotationProperty .
+
+# =============================================================================
+# CLASSES
+# =============================================================================
+
+# --- Core Classes ---
+
+edintinm:RealEstateListing
+    a owl:Class ;
+    rdfs:label "Real Estate Listing"@en ;
+    rdfs:label "Anuncio Inmobiliario"@es ;
+    rdfs:comment "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."@en ;
+    rdfs:comment "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."@es ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dcterms:identifier ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+# =============================================================================
+# OBJECT PROPERTIES
+# =============================================================================
+
+# --- Property and transaction types ---
+
+edintinm:propertyType
+    a owl:ObjectProperty ;
+    rdfs:label "property type"@en ;
+    rdfs:label "tipo de inmueble"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range skos:Concept ;
+    rdfs:comment "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."@en ;
+    rdfs:comment "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."@es .
+
+edintinm:transactionType
+    a owl:ObjectProperty ;
+    rdfs:label "transaction type"@en ;
+    rdfs:label "tipo de transacción"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range skos:Concept ;
+    rdfs:comment "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ;
+    rdfs:comment "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es .
+
+# --- Link to Cadastral entities ---
+
+edintinm:refersToCadastralEntity
+    a owl:ObjectProperty ;
+    rdfs:label "refers to cadastral entity"@en ;
+    rdfs:label "se refiere a entidad catastral"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty) ;
+    ] ;
+    rdfs:comment "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en ;
+    rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es .
+
+# =============================================================================
+# DATA PROPERTIES
+# =============================================================================
+
+edintinm:isActive
+    a owl:DatatypeProperty ;
+    rdfs:label "is active"@en ;
+    rdfs:label "está activo"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en ;
+    rdfs:comment "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es .
+
+dcterms:identifier
+    a owl:DatatypeProperty ;
+    rdfs:label "identifier"@en ;
+    rdfs:label "identificador"@es ;
+    rdfs:domain edintinm:RealEstateListing ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Unique identifier for the real estate listing."@en ;
+    rdfs:comment "Identificador único para el anuncio inmobiliario."@es .
+
+# =============================================================================
+# END OF ONTOLOGY
+# =============================================================================

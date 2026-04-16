@@ -12,10 +12,19 @@ El objetivo de esta carpeta es almacenar los archivos de los **vocabularios cont
 
 Incluya recursos en los siguientes formatos:
 
-- `.owl` — Ficheros Ontology Web Language files  
-- `.rdf` — Ficheros  Resource Description Framework files  
-- `.ttl` — Serialización en Turtle   
+- `.owl` — Ficheros Ontology Web Language files
+- `.rdf` — Ficheros  Resource Description Framework files
+- `.ttl` — Serialización en Turtle
 - `.jsonld` — JSON para datos enlazados
+
+# Vocabularios SKOS implementados
+
+| Archivo | ConceptScheme | Prefijo | Descripción |
+|---------|--------------|---------|-------------|
+| **Inmobiliaria ontology** | | | |
+| `inmobiliaria-transaction-type.ttl` | `edintkos:TransactionType` | `edintkos-trans:` | Vocabulario controlado de tipos de transacción inmobiliaria (3 conceptos: Venta, Alquiler, Traspaso) |
+
+**Nota**: Los vocabularios del catastro (uso, estado, clase) han sido movidos al repositorio separado [edint-ontologia-catastro](https://github.com/edint/edint-ontologia-catastro).
 
 # Buenas prácticas
 
