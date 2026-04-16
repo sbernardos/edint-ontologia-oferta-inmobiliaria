@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
-     xml:base="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria"
+     xml:base="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,8 +9,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria">
-        <owl:versionIRI rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0"/>
+    <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">
+        <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/catastro/"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <ns:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>

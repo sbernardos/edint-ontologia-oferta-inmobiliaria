@@ -18,8 +18,8 @@
 # ONTOLOGY METADATA
 # =============================================================================
 
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> a owl:Ontology ;
-    owl:versionIRI <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0> ;
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0> ;
     owl:versionInfo "0.1.0" ;
     dcterms:title "Spanish Real Estate Listing Ontology"@en ;
     dcterms:title "Ontología de Oferta Inmobiliaria Española"@es ;

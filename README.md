@@ -113,7 +113,7 @@ El repositorio debe contener (al menos) las siguientes carpetas
 | **diagrams/** | Contiene diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones). |
 | **documentation/** | Contiene la documentación de la ontología y artefactos relacionados en formato HTML o dirigida a usuarios. |
 | **tests/** | Contiene las pruebas para la evaluación de la ontología. |
-| **kos/** | Contiene la implementación de vocabularios controlados o KOS relacionados con la ontología Inmobiliaria (transaction-type). Los vocabularios del catastro (uso, estado, clase) están en el repositorio [edint-ontologia-catastro](https://github.com/edint/edint-ontologia-catastro).|
+| **kos/** | Contiene la implementación de vocabularios controlados o KOS relacionados con la ontología Inmobiliaria (transaction-type). |
 | **ontology/** | Contiene los archivos de implementación de la ontología Inmobiliaria en formatos como .owl, .rdf, .ttl o .jsonld |
 | **requirements/** | Contiene todos los documentos utilizados para definir los requisitos de la ontología: ejemplos de datos, preguntas de competencia, requisitos funcionales, casos de uso, etc. |
 | **shapes/** | Contiene las restricciones SHACL utilizad para validar datos respecto a la ontología.  |

@@ -1,25 +1,25 @@
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2002/07/owl#versionIRI> <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/created> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/creator> "Daniel Doña"@es .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/creator> "Edna Ruckhaus" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/creator> "Lucía Sánchez" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/creator> "Maria del Socorro Bernardos" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/creator> "Oscar Corcho" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/description> "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/description> "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/modified> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/title> "Ontología de Oferta Inmobiliaria Española"@es .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/dc/terms/title> "Spanish Real Estate Listing Ontology"@en .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintinm" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2000/01/rdf-schema#comment> "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es .
-<https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/created> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Daniel Doña"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Edna Ruckhaus" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Lucía Sánchez" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Maria del Socorro Bernardos" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Oscar Corcho" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/modified> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/title> "Ontología de Oferta Inmobiliaria Española"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/title> "Spanish Real Estate Listing Ontology"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintinm" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2000/01/rdf-schema#comment> "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
 # 
 # 
 # #################################################################

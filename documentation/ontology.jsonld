@@ -81,6 +81,73 @@
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://creativecommons.org/ns#license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-04-14"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@language" : "es",
+    "@value" : "Daniel Doña"
+  }, {
+    "@value" : "Edna Ruckhaus"
+  }, {
+    "@value" : "Lucía Sánchez"
+  }, {
+    "@value" : "Maria del Socorro Bernardos"
+  }, {
+    "@value" : "Oscar Corcho"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."
+  }, {
+    "@language" : "es",
+    "@value" : "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-04-14"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "es",
+    "@value" : "Ontología de Oferta Inmobiliaria Española"
+  }, {
+    "@language" : "en",
+    "@value" : "Spanish Real Estate Listing Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "edintinm"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."
+  }, {
+    "@language" : "es",
+    "@value" : "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/"
+  }, {
+    "@id" : "http://www.opengis.net/ont/geosparql"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "0.1.0"
+  } ]
+}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -204,71 +271,4 @@
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://creativecommons.org/ns#license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/created" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-04-14"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@language" : "es",
-    "@value" : "Daniel Doña"
-  }, {
-    "@value" : "Edna Ruckhaus"
-  }, {
-    "@value" : "Lucía Sánchez"
-  }, {
-    "@value" : "Maria del Socorro Bernardos"
-  }, {
-    "@value" : "Oscar Corcho"
-  } ],
-  "http://purl.org/dc/terms/description" : [ {
-    "@language" : "en",
-    "@value" : "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."
-  }, {
-    "@language" : "es",
-    "@value" : "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/modified" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-04-14"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "es",
-    "@value" : "Ontología de Oferta Inmobiliaria Española"
-  }, {
-    "@language" : "en",
-    "@value" : "Spanish Real Estate Listing Ontology"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "edintinm"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."
-  }, {
-    "@language" : "es",
-    "@value" : "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/"
-  }, {
-    "@id" : "http://www.opengis.net/ont/geosparql"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "0.1.0"
-  } ]
 } ]
