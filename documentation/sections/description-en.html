@@ -1,5 +1,81 @@
 <h2 id="desc" class="list">inmobiliaria: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
 
-</span>
+<div style="padding: 25px; background-color: white; width: 100%; box-sizing: border-box; overflow: hidden;">
+    <a href="images/diagram.png" target="_blank" style="display: block;">
+        <img src="images/diagram.png" style="width: 100%; height: auto; display: block;"/>
+    </a>
+</div>
+
+The real estate ontology defines a single main class: <a href="#RealEstateListing">Real Estate Listing</a> (<code>RealEstateListing</code>), which represents a property offer on the market, whether for sale, rent, or transfer. Each listing has a unique identifier and describes the property type, the type of real estate transaction, and its current status (active or inactive). This ontology reuses GeoSPARQL for geospatial support and integrates with the <a href="http://vocab.linkeddata.es/datosabiertos/def/catastro/" target="_blank">Spanish Cadastre ontology</a> to link listings with their corresponding cadastral entities.
+
+Real estate listings are described through three object properties: <a href="#propertyType">property type</a> (<code>propertyType</code>), which indicates the category of the property (dwelling, commercial local, office, industrial warehouse, or plot) and has as its range the SKOS concept scheme <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/" target="_blank">Spanish Cadastre Property Uses</a>; <a href="#transactionType">transaction type</a> (<code>transactionType</code>), which specifies whether the offer is a sale, rent, or transfer, and has as its range the SKOS concept scheme <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/" target="_blank">Real Estate Transaction Types</a>; and <a href="#refersToCadastralEntity">refers to cadastral entity</a> (<code>refersToCadastralEntity</code>), which links the listing to its corresponding cadastral entity, which can be a <a href="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel" target="_blank">CadastralParcel</a> (cadastral parcel) for unbuilt land, or a <a href="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty" target="_blank">CadastralProperty</a> (cadastral property) for buildings or real estate units. In addition, listings are described with two data properties: <a href="#http://purl.org/dc/terms/identifier">identifier</a> (<code>identifier</code>), which provides a unique identifier for each listing, and <a href="#isActive">is active</a> (<code>isActive</code>), which indicates whether the real estate listing is currently active (true) or inactive (false).
+
+An example of an entity defined by the ontology could be the following:
+
+<pre>
+    <textarea style="resize:none" readonly id="code1" name="code" rows="75" cols="200">
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
+@prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# REAL ESTATE LISTING
+# ---------------------------------------------------------------------------
+
+ex:Listing001 a edintinm:RealEstateListing ;
+    rdfs:label "Vivienda en venta en Madrid"@es ;
+    rdfs:label "Dwelling for sale in Madrid"@en ;
+    dct:identifier "LIST-001" ;
+    edintinm:propertyType edintkos-uso:vivienda ;
+    edintinm:transactionType edintkos-trans:Venta ;
+    edintinm:isActive true ;
+    edintinm:refersToCadastralEntity ex:CadastralProperty001 .
+
+# ---------------------------------------------------------------------------
+# CADASTRAL ENTITY
+# ---------------------------------------------------------------------------
+
+ex:CadastralProperty001 a catastro:CadastralProperty ;
+    catastro:referenceCatastral "9876543BC4567N0001WO" ;
+    catastro:hasAddress ex:Address001 ;
+    gsp:hasGeometry ex:Geometry001 .
+
+# ---------------------------------------------------------------------------
+# ADDRESS
+# ---------------------------------------------------------------------------
+
+ex:Address001 a catastro:Address ;
+    catastro:roadName "Calle Mayor" ;
+    catastro:roadNumber "15" ;
+    catastro:zipCode "28013" ;
+    catastro:city "Madrid" ;
+    catastro:province "Madrid" .
+
+# ---------------------------------------------------------------------------
+# GEOMETRY (POLYGON - BUILDING FOOTPRINT)
+# ---------------------------------------------------------------------------
+
+ex:Geometry001 a gsp:Geometry ;
+    gsp:asWKT "POLYGON((-3.7078 40.4173, -3.7068 40.4173, -3.7068 40.4163, -3.7078 40.4163, -3.7078 40.4173))" .
+
+    </textarea>
+</pre>
+
+
+<script>
+    var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+
+</script>
