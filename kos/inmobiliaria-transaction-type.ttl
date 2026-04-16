@@ -9,28 +9,6 @@
 @prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
 
 # =============================================================================
-# ONTOLOGY METADATA
-# =============================================================================
-
-<http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type> a owl:Ontology ;
-    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/0.1.0> ;
-    owl:versionInfo "0.1.0" ;
-    dct:title "Controlled Vocabulary of Real Estate Transaction Types"@en ;
-    dct:title "Vocabulario Controlado de Tipos de Transacción Inmobiliaria"@es ;
-    dct:description "SKOS concept scheme defining the vocabulary of real estate transaction types for the Spanish real estate listings ontology."@en ;
-    dct:description "Esquema de conceptos SKOS que define el vocabulario de tipos de transacción inmobiliaria para la ontología de ofertas inmobiliarias española."@es ;
-    dct:issued "2026-04-14"^^xsd:date ;
-    dct:modified "2026-04-14"^^xsd:date ;
-    dct:creator "Daniel Doña"@es ,
-                "Edna Ruckhaus" ,
-                "Lucía Sánchez" ,
-                "Maria del Socorro Bernardos" ,
-                "Oscar Corcho" ;
-    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    skos:note "Standard transaction types for Spanish real estate market: Venta (Sale), Alquiler (Rent), Traspaso (Transfer)."@en ;
-    skos:note "Tipos de transacción estándar para el mercado inmobiliario español: Venta, Alquiler, Traspaso."@es .
-
-# =============================================================================
 # CONCEPT SCHEME
 # =============================================================================
 
