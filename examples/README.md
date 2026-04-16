@@ -129,7 +129,7 @@ Each example follows this basic structure:
 Cada ejemplo sigue esta estructura básica:
 
 ```turtle
-@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 

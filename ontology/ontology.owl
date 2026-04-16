@@ -1,4 +1,4 @@
-@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -10,6 +10,8 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 
 @prefix edintcat: <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
 
 
 # =============================================================================
@@ -32,13 +34,11 @@
                     "Oscar Corcho" ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:imports <https://edint.github.io/edint-ontologia-catastro/ontology/catastro> ,
-                <http://www.opengis.net/ont/geosparql> ,
-                <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> ,
-                <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type> ;
+    owl:imports <http://vocab.linkeddata.es/datosabiertos/def/catastro/> ,
+                <http://www.opengis.net/ont/geosparql> ;
     rdfs:comment "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en ;
     rdfs:comment "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es ;
-    vann:preferredNamespaceUri "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#" ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" ;
     vann:preferredNamespacePrefix "edintinm" .
 
 dcterms:contributor a owl:AnnotationProperty .
@@ -109,7 +109,7 @@ edintinm:refersToCadastralEntity
         owl:unionOf (edintcat:CadastralParcel edintcat:CadastralProperty) ;
     ] ;
     rdfs:comment "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en ;
-    rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es ;
+    rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es .
 
 # =============================================================================
 # DATA PROPERTIES

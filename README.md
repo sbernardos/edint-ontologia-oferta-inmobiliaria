@@ -1,9 +1,5 @@
 # Ontología EDINT Inmobiliaria (EDINT Real Estate Ontology)
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
-![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)
-![Status](https://img.shields.io/badge/status-Draft-orange)
-
 La ontología Inmobiliaria representa el dominio de ofertas inmobiliarias en el contexto español.
 
 # Propósito y alcance de la ontología (Purpose and scope of the ontology)
@@ -13,16 +9,9 @@ El alcance de la ontología está limitado a la representación de anuncios inmo
 
 # Prefijo y espacio de nombres (Prefix and namespace)
 
-El prefijo de la ontología es: `edintinm` y se encuentra publicada en el espacio de nombres: [https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria](https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria)
+El prefijo de la ontología es: `edintinm` y se encuentra publicada en el espacio de nombres: [http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/](http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/)
 
 # Modelo conceptual (Ontology conceptualization)
-
-Cada repositorio de desarrollo de ontologías debe incluir, en este README principal, una representación visual de la conceptualización de la ontología.
-Esta imagen ayuda a los usuarios y colaboradores a comprender rápidamente la estructura de la ontología, sus conceptos clave y las relaciones entre ellos.
-
-- La imagen debe estar ubicada en la carpeta de conceptualización.
-- Formatos aceptados: .svg, .png o .drawio.
-- Debe referenciarse en este README usando la sintaxis de Markdown, por ejemplo:
 
 ![Diagrama del modelo conceptual](diagrams/diagrama-inmobiliaria.drawio.png)
 
@@ -35,7 +24,7 @@ To create a real estate listing, follow this structure:
 Para crear un anuncio inmobiliario, siga esta estructura:
 
 ```turtle
-@prefix edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -76,7 +65,7 @@ Example query to get all active listings:
 Consulta de ejemplo para obtener todos los anuncios activos:
 
 ```sparql
-PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
 SELECT ?listing ?listingId

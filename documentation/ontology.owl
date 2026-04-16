@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#"
+<rdf:RDF xmlns="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
      xml:base="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria"
      xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -11,10 +11,8 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria">
         <owl:versionIRI rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type"/>
-        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/edint/uso"/>
+        <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/catastro/"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
-        <owl:imports rdf:resource="https://edint.github.io/edint-ontologia-catastro/ontology/catastro"/>
         <ns:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-14</terms:created>
         <terms:creator xml:lang="es">Daniel Doña</terms:creator>
@@ -29,7 +27,7 @@
         <terms:title xml:lang="es">Ontología de Oferta Inmobiliaria Española</terms:title>
         <terms:title xml:lang="en">Spanish Real Estate Listing Ontology</terms:title>
         <vann:preferredNamespacePrefix>edintinm</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status.</rdfs:comment>
         <rdfs:comment xml:lang="es">Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo.</rdfs:comment>
         <owl:versionInfo>0.1.0</owl:versionInfo>
@@ -171,18 +169,11 @@
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType -->
 
 
-    <owl:ObjectProperty rdf:about="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing"/>
-    
-
-
-    <!-- https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#propertyType -->
-
-
-    <owl:ObjectProperty rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#propertyType">
-        <rdfs:domain rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"/>
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary.</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español.</rdfs:comment>
@@ -192,17 +183,16 @@
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#refersToCadastralEntity -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity -->
 
 
-    <owl:ObjectProperty rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#refersToCadastralEntity">
-        <owl:inverseOf rdf:resource="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing"/>
-        <rdfs:domain rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"/>
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel"/>
-                    <rdf:Description rdf:about="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty"/>
+                    <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel"/>
+                    <rdf:Description rdf:about="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -214,11 +204,11 @@
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#transactionType -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType -->
 
 
-    <owl:ObjectProperty rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#transactionType">
-        <rdfs:domain rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"/>
+    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary.</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción.</rdfs:comment>
@@ -244,7 +234,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
-        <rdfs:domain rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"/>
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="es">Identificador único para el anuncio inmobiliario.</rdfs:comment>
         <rdfs:comment xml:lang="en">Unique identifier for the real estate listing.</rdfs:comment>
@@ -254,11 +244,11 @@
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#isActive -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive -->
 
 
-    <owl:DatatypeProperty rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#isActive">
-        <rdfs:domain rdf:resource="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"/>
+    <owl:DatatypeProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive">
+        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">Property indicating whether the real estate listing is currently active (true) or inactive (false).</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso).</rdfs:comment>
@@ -280,31 +270,24 @@
     
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel -->
 
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel"/>
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty -->
 
 
-    <owl:Class rdf:about="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel"/>
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty"/>
     
 
 
-    <!-- https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing -->
 
 
-    <owl:Class rdf:about="https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty"/>
-    
-
-
-    <!-- https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing -->
-
-
-    <owl:Class rdf:about="https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing">
+    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
@@ -316,6 +299,13 @@
         <rdfs:label xml:lang="es">Anuncio Inmobiliario</rdfs:label>
         <rdfs:label xml:lang="en">Real Estate Listing</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:RDF>
 
 

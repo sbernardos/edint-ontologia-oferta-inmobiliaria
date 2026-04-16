@@ -3,9 +3,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel"
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel"
     }, {
-      "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty"
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty"
     } ]
   } ]
 }, {
@@ -44,7 +44,7 @@
     "@value" : "Unique identifier for the real estate listing."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -75,6 +75,124 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."
+  }, {
+    "@language" : "es",
+    "@value" : "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Anuncio Inmobiliario"
+  }, {
+    "@language" : "en",
+    "@value" : "Real Estate Listing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Property indicating whether the real estate listing is currently active (true) or inactive (false)."
+  }, {
+    "@language" : "es",
+    "@value" : "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "está activo"
+  }, {
+    "@language" : "en",
+    "@value" : "is active"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."
+  }, {
+    "@language" : "es",
+    "@value" : "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "property type"
+  }, {
+    "@language" : "es",
+    "@value" : "tipo de inmueble"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."
+  }, {
+    "@language" : "en",
+    "@value" : "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "refers to cadastral entity"
+  }, {
+    "@language" : "es",
+    "@value" : "se refiere a entidad catastral"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."
+  }, {
+    "@language" : "es",
+    "@value" : "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "tipo de transacción"
+  }, {
+    "@language" : "en",
+    "@value" : "transaction type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ]
+}, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
@@ -86,15 +204,6 @@
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
@@ -142,7 +251,7 @@
     "@value" : "edintinm"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#"
+    "@value" : "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -152,133 +261,14 @@
     "@value" : "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type"
-  }, {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/uso"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/"
   }, {
     "@id" : "http://www.opengis.net/ont/geosparql"
-  }, {
-    "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "0.1.0"
-  } ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."
-  }, {
-    "@language" : "es",
-    "@value" : "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Anuncio Inmobiliario"
-  }, {
-    "@language" : "en",
-    "@value" : "Real Estate Listing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid4"
-  } ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#isActive",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Property indicating whether the real estate listing is currently active (true) or inactive (false)."
-  }, {
-    "@language" : "es",
-    "@value" : "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "está activo"
-  }, {
-    "@language" : "en",
-    "@value" : "is active"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
-  } ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#propertyType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."
-  }, {
-    "@language" : "es",
-    "@value" : "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "property type"
-  }, {
-    "@language" : "es",
-    "@value" : "tipo de inmueble"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
-  } ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#refersToCadastralEntity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."
-  }, {
-    "@language" : "en",
-    "@value" : "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "refers to cadastral entity"
-  }, {
-    "@language" : "es",
-    "@value" : "se refiere a entidad catastral"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid1"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing"
-  } ]
-}, {
-  "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#transactionType",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."
-  }, {
-    "@language" : "es",
-    "@value" : "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "tipo de transacción"
-  }, {
-    "@language" : "en",
-    "@value" : "transaction type"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 } ]

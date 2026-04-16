@@ -1,17 +1,15 @@
-@prefix : <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#> .
+@base <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 
 <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria> rdf:type owl:Ontology ;
                                                                            owl:versionIRI <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria/0.1.0> ;
-                                                                           owl:imports <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type> ,
-                                                                                       <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso> ,
-                                                                                       <http://www.opengis.net/ont/geosparql> ,
-                                                                                       <https://edint.github.io/edint-ontologia-catastro/ontology/catastro> ;
+                                                                           owl:imports <http://vocab.linkeddata.es/datosabiertos/def/catastro/> ,
+                                                                                       <http://www.opengis.net/ont/geosparql> ;
                                                                            <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> ;
                                                                            <http://purl.org/dc/terms/created> "2026-04-14"^^xsd:date ;
                                                                            <http://purl.org/dc/terms/creator> "Daniel Doña"@es ,
@@ -26,7 +24,7 @@
                                                                            <http://purl.org/dc/terms/title> "Ontología de Oferta Inmobiliaria Española"@es ,
                                                                                                             "Spanish Real Estate Listing Ontology"@en ;
                                                                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintinm" ;
-                                                                           <http://purl.org/vocab/vann/preferredNamespaceUri> "https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#" ;
+                                                                           <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" ;
                                                                            rdfs:comment "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en ,
                                                                                         "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es ;
                                                                            owl:versionInfo "0.1.0" .
@@ -99,43 +97,38 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing
-<https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing> rdf:type owl:ObjectProperty .
+###  http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> ;
+                                                                                rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                                                rdfs:comment "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."@en ,
+                                                                                             "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."@es ;
+                                                                                rdfs:label "property type"@en ,
+                                                                                           "tipo de inmueble"@es .
 
 
-###  https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#propertyType
-:propertyType rdf:type owl:ObjectProperty ;
-              rdfs:domain :RealEstateListing ;
-              rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
-              rdfs:comment "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."@en ,
-                           "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."@es ;
-              rdfs:label "property type"@en ,
-                         "tipo de inmueble"@es .
+###  http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> ;
+                                                                                           rdfs:range [ rdf:type owl:Class ;
+                                                                                                        owl:unionOf ( <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel>
+                                                                                                                      <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty>
+                                                                                                                    )
+                                                                                                      ] ;
+                                                                                           rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es ,
+                                                                                                        "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en ;
+                                                                                           rdfs:label "refers to cadastral entity"@en ,
+                                                                                                      "se refiere a entidad catastral"@es .
 
 
-###  https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#refersToCadastralEntity
-:refersToCadastralEntity rdf:type owl:ObjectProperty ;
-                         owl:inverseOf <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#hasListing> ;
-                         rdfs:domain :RealEstateListing ;
-                         rdfs:range [ rdf:type owl:Class ;
-                                      owl:unionOf ( <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel>
-                                                    <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty>
-                                                  )
-                                    ] ;
-                         rdfs:comment "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es ,
-                                      "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en ;
-                         rdfs:label "refers to cadastral entity"@en ,
-                                    "se refiere a entidad catastral"@es .
-
-
-###  https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#transactionType
-:transactionType rdf:type owl:ObjectProperty ;
-                 rdfs:domain :RealEstateListing ;
-                 rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
-                 rdfs:comment "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ,
-                              "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es ;
-                 rdfs:label "tipo de transacción"@es ,
-                            "transaction type"@en .
+###  http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> ;
+                                                                                   rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                                                   rdfs:comment "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ,
+                                                                                                "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es ;
+                                                                                   rdfs:label "tipo de transacción"@es ,
+                                                                                              "transaction type"@en .
 
 
 #################################################################
@@ -144,7 +137,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/dc/terms/identifier
 <http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain :RealEstateListing ;
+                                      rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> ;
                                       rdfs:range xsd:string ;
                                       rdfs:comment "Identificador único para el anuncio inmobiliario."@es ,
                                                    "Unique identifier for the real estate listing."@en ;
@@ -152,42 +145,42 @@ xsd:date rdf:type rdfs:Datatype .
                                                  "identifier"@en .
 
 
-###  https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#isActive
-:isActive rdf:type owl:DatatypeProperty ;
-          rdfs:domain :RealEstateListing ;
-          rdfs:range xsd:boolean ;
-          rdfs:comment "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en ,
-                       "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es ;
-          rdfs:label "está activo"@es ,
-                     "is active"@en .
+###  http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> rdf:type owl:DatatypeProperty ;
+                                                                            rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> ;
+                                                                            rdfs:range xsd:boolean ;
+                                                                            rdfs:comment "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en ,
+                                                                                         "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es ;
+                                                                            rdfs:label "está activo"@es ,
+                                                                                       "is active"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://purl.org/dc/terms/identifier> ;
+                                                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                                     ] ;
+                                                                                     rdfs:comment "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."@en ,
+                                                                                                  "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."@es ;
+                                                                                     rdfs:label "Anuncio Inmobiliario"@es ,
+                                                                                                "Real Estate Listing"@en .
+
+
 ###  http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
-
-
-###  https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel
-<https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralParcel> rdf:type owl:Class .
-
-
-###  https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty
-<https://edint.github.io/edint-ontologia-catastro/ontology/catastro#CadastralProperty> rdf:type owl:Class .
-
-
-###  https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#RealEstateListing
-:RealEstateListing rdf:type owl:Class ;
-                   rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://purl.org/dc/terms/identifier> ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
-                                   ] ;
-                   rdfs:comment "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."@en ,
-                                "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."@es ;
-                   rdfs:label "Anuncio Inmobiliario"@es ,
-                              "Real Estate Listing"@en .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

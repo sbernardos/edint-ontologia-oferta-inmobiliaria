@@ -1,4 +1,4 @@
-PREFIX edintinm: <https://edint.github.io/edint-ontologia-inmuebles/ontology/inmobiliaria#>
+PREFIX edintinm: <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 
 # CQ05: What is the current status of a real estate listing?
