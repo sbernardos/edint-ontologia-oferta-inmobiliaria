@@ -3,6 +3,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
 @prefix ex: <http://example.org/> .
 
 # Rent Listing Example: Commercial Local
@@ -12,8 +14,8 @@ ex:Listing002 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-002" ;
     dcterms:title "Local comercial en alquiler en Barcelona" ;
     dcterms:title "Commercial local for rent in Barcelona"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/local-comercial> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Alquiler> ;
+    edintinm:propertyType edintkos-uso:local-comercial ;
+    edintinm:transactionType edintkos-trans:Alquiler ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty002 .
 
@@ -30,4 +32,4 @@ ex:Address002 a catastro:Address ;
     catastro:province "Barcelona" .
 
 ex:Geometry002 a geo:Geometry ;
-    geo:asWKT "POINT(2.1993 41.3851)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((2.1988 41.3856, 2.1998 41.3856, 2.1998 41.3846, 2.1988 41.3846, 2.1988 41.3856))"^^geo:wktLiteral .
