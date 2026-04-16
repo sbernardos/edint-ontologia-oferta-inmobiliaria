@@ -6,6 +6,10 @@
 <link rel="stylesheet" href="resources/rec.css" media="screen"/>
 <link rel="stylesheet" href="resources/extra.css" media="screen"/>
 <link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/codemirror.css" media="screen">
+<script src="resources/codemirror.js"></script>
+<script src="resources/matchbrackets.js"></script>
+<script src="resources/turtle.js"></script>
 <link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
 <link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
 <link rel="stylesheet" href="resources/slider.css" media="screen"/>
@@ -13,11 +17,11 @@
 <script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
 	<dark-mode-toggle class="slider"></dark-mode-toggle>
 </div>
-<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>Ontología EDINT Inmobiliaria</title>
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>Ontología EDINT del Catastro Español</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/","name":"Ontología EDINT Inmobiliaria", "headline":"Una ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español.", "dateReleased":"Date created", "dateModified":"Date modified", "version":"0.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Daniel Doña"},{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Lucía Sánchez"},{"@type":"Person","name":"Maria del Socorro Bernardos"},{"@type":"Person","name":"Oscar Corcho"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://vocab.linkeddata.es/datosabiertos/def/catastro/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://vocab.linkeddata.es/datosabiertos/def/catastro/","name":"Ontología EDINT del Catastro Español", "headline":"Ontología para modelar las entidades del Catastro Español, centrada en Parcelas, Inmuebles y Construcciones. Reutiliza GeoSPARQL, conceptos INSPIRE y el vocabulario de callejero español.", "dateReleased":"Date created", "dateModified":"Date modified", "version":"0.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Daniel Doña"},{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Lucía Sánchez"},{"@type":"Person","name":"Maria del Socorro Bernardos"},{"@type":"Person","name":"Oscar Corcho"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -97,7 +101,7 @@ function loadTOC(){
 <a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
 <img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" style="border-width:0" alt="License" />
 </a>
-<br/></dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citar como:</dt>
+<br/></dd><dt>Tesauros SKOS:</dt><dd><span><a href="kos/kos-es.html" target="_blank"> <img src="https://img.shields.io/badge/Format-HTML-blue.svg" alt="SKOS" /></a></span></dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citar como:</dt>
 <dd>Ontología EDINT Inmobiliaria. Revision: 0.1.0.</dd>
 </dl>
 

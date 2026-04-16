@@ -3,6 +3,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
 @prefix ex: <http://example.org/> .
 
 # Complete Listing Example: Multiple Properties and Transactions
@@ -14,8 +16,8 @@ ex:Listing003 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-003" ;
     dcterms:title "Vivienda familiar en venta en Valencia" ;
     dcterms:title "Family dwelling for sale in Valencia"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/vivienda> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
+    edintinm:propertyType edintkos-uso:vivienda ;
+    edintinm:transactionType edintkos-trans:Venta ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty003 .
 
@@ -25,8 +27,8 @@ ex:Listing004 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-004" ;
     dcterms:title "Oficina moderna en alquiler en Sevilla" ;
     dcterms:title "Modern office for rent in Seville"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/oficina> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Alquiler> ;
+    edintinm:propertyType edintkos-uso:oficina ;
+    edintinm:transactionType edintkos-trans:Alquiler ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty004 .
 
@@ -36,8 +38,8 @@ ex:Listing005 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-005" ;
     dcterms:title "Nave industrial en venta en Zaragoza" ;
     dcterms:title "Industrial warehouse for sale in Zaragoza"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/nave-industrial> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
+    edintinm:propertyType edintkos-uso:nave-industrial ;
+    edintinm:transactionType edintkos-trans:Venta ;
     edintinm:isActive false ;
     edintinm:refersToCadastralEntity ex:CadastralProperty005 .
 
@@ -47,8 +49,8 @@ ex:Listing006 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-006" ;
     dcterms:title "Solar urbanizable en venta en Bilbao" ;
     dcterms:title "Urban plot for sale in Bilbao"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/solar> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
+    edintinm:propertyType edintkos-uso:solar ;
+    edintinm:transactionType edintkos-trans:Venta ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralParcel001 .
 
@@ -96,13 +98,13 @@ ex:Address005 a catastro:Address ;
 
 # Geometries / Geometrías
 ex:Geometry003 a geo:Geometry ;
-    geo:asWKT "POINT(-0.3763 39.4699)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((-0.3768 39.4704, -0.3758 39.4704, -0.3758 39.4694, -0.3768 39.4694, -0.3768 39.4704))"^^geo:wktLiteral .
 
 ex:Geometry004 a geo:Geometry ;
-    geo:asWKT "POINT(-5.9845 37.3891)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((-5.9850 37.3896, -5.9840 37.3896, -5.9840 37.3886, -5.9850 37.3886, -5.9850 37.3896))"^^geo:wktLiteral .
 
 ex:Geometry005 a geo:Geometry ;
-    geo:asWKT "POINT(-1.0062 41.6488)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((-1.0067 41.6493, -1.0057 41.6493, -1.0057 41.6483, -1.0067 41.6483, -1.0067 41.6493))"^^geo:wktLiteral .
 
 ex:Geometry006 a geo:Geometry ;
-    geo:asWKT "POINT(-2.9345 43.2630)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((-2.9350 43.2635, -2.9340 43.2635, -2.9340 43.2625, -2.9350 43.2625, -2.9350 43.2635))"^^geo:wktLiteral .

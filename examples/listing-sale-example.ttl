@@ -3,6 +3,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix catastro: <https://edint.github.io/edint-ontologia-catastro/ontology/catastro#> .
+@prefix edintkos-uso: <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/> .
+@prefix edintkos-trans: <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/> .
 @prefix ex: <http://example.org/> .
 
 # Sale Listing Example: Residential Dwelling
@@ -12,8 +14,8 @@ ex:Listing001 a edintinm:RealEstateListing ;
     dcterms:identifier "LIST-001" ;
     dcterms:title "Vivienda en venta en Madrid" ;
     dcterms:title "Dwelling for sale in Madrid"@en ;
-    edintinm:propertyType <http://vocab.linkeddata.es/datosabiertos/kos/edint/uso/vivienda> ;
-    edintinm:transactionType <http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type/Venta> ;
+    edintinm:propertyType edintkos-uso:vivienda ;
+    edintinm:transactionType edintkos-trans:Venta ;
     edintinm:isActive true ;
     edintinm:refersToCadastralEntity ex:CadastralProperty001 .
 
@@ -30,4 +32,4 @@ ex:Address001 a catastro:Address ;
     catastro:province "Madrid" .
 
 ex:Geometry001 a geo:Geometry ;
-    geo:asWKT "POINT(-3.7073 40.4168)"^^geo:wktLiteral .
+    geo:asWKT "POLYGON((-3.7078 40.4173, -3.7068 40.4173, -3.7068 40.4163, -3.7078 40.4163, -3.7078 40.4173))"^^geo:wktLiteral .
