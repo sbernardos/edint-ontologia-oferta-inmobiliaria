@@ -25,25 +25,20 @@
     owl:versionInfo "0.1.0" ;
     dcterms:title "Spanish Real Estate Listing Ontology"@en ;
     dcterms:title "Ontología de Oferta Inmobiliaria Española"@es ;
-    dcterms:description "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en ;
-    dcterms:description "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es ;
+    dcterms:description "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Integrates with the Spanish Cadastre ontology."@en ;
+    dcterms:description "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Se integra con la ontología del Catastro Español."@es ;
     dcterms:created "2026-04-14"^^xsd:date ;
-    dcterms:modified "2026-04-14"^^xsd:date ;
+    dcterms:issued "2026-04-17"^^xsd:date ;
+    dcterms:modified "2026-04-17"^^xsd:date ;
     dcterms:hasFormat <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria.owl> ;
-    dc:abstract "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en ,
-                "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es ;
     dcterms:creator "Daniel Doña"@es ,
                     "Edna Ruckhaus" ,
                     "Lucía Sánchez" ,
                     "Maria del Socorro Bernardos" ,
                     "Oscar Corcho" ;
-    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:imports <http://vocab.linkeddata.es/datosabiertos/def/catastro/> ,
-                <http://www.opengis.net/ont/geosparql> ;
-    rdfs:comment "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en ;
-    rdfs:comment "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es ;
-    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" ;
+    owl:imports <http://vocab.linkeddata.es/datosabiertos/def/catastro/> ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"^^xsd:anyURI ;
     vann:preferredNamespacePrefix "edintinm" .
 # =============================================================================
 # CLASSES
@@ -61,7 +56,8 @@ edintinm:RealEstateListing
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty dcterms:identifier ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onDataRange xsd:string
     ] .
 
 # =============================================================================
@@ -72,34 +68,30 @@ edintinm:RealEstateListing
 
 edintinm:propertyType
     a owl:ObjectProperty ;
-    rdfs:label "property type"@en ;
-    rdfs:label "tipo de inmueble"@es ;
+    rdfs:label "Property Type"@en ;
+    rdfs:label "Tipo de Inmueble"@es ;
     rdfs:domain edintinm:RealEstateListing ;
-    rdfs:range [ owl:intersectionOf ( skos:Concept
-                                      [ a owl:Restriction ;
-                                        owl:onProperty skos:inScheme ;
-                                        owl:hasValue edintkos-uso:Uso
-                                      ]
-                                    ) ;
-                 a owl:Class
-               ] ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf [
+        a owl:Restriction ;
+        owl:onProperty skos:inScheme ;
+        owl:allValuesFrom edintkos-uso:Uso
+    ] ;
     rdfs:comment "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."@en ;
     rdfs:comment "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."@es ;
     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 
 edintinm:transactionType
     a owl:ObjectProperty ;
-    rdfs:label "transaction type"@en ;
-    rdfs:label "tipo de transacción"@es ;
+    rdfs:label "Transaction Type"@en ;
+    rdfs:label "Tipo de Transacción"@es ;
     rdfs:domain edintinm:RealEstateListing ;
-    rdfs:range [ owl:intersectionOf ( skos:Concept
-                                      [ a owl:Restriction ;
-                                        owl:onProperty skos:inScheme ;
-                                        owl:hasValue edintkos-trans:TransactionType
-                                      ]
-                                    ) ;
-                 a owl:Class
-               ] ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf [
+        a owl:Restriction ;
+        owl:onProperty skos:inScheme ;
+        owl:allValuesFrom edintkos-trans:TransactionType
+    ] ;
     rdfs:comment "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en ;
     rdfs:comment "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es ;
     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
@@ -133,6 +125,3 @@ edintinm:isActive
     rdfs:comment "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es ;
     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 
-
-# END OF ONTOLOGY
-# =============================================================================

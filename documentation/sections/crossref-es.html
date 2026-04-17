@@ -11,16 +11,26 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <div class="comment">
    <span class="markdown">Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual.</span>
   </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</a>
+   </dd>
+  </dl>
   <dl class="description">
    <dt>
     tiene superclases
    </dt>
-   <dd></dd>
+   <dd>
+    <a href="http://org.semanticweb.owlapi/error#Error1" target="_blank" title="http://org.semanticweb.owlapi/error#Error1">Error1</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
    <dt>
     en dominio de
    </dt>
    <dd>
-    <a href="#isActive" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive">está activo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity">se refiere a entidad catastral</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#propertyType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">tipo de inmueble</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#transactionType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">tipo de transacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#propertyType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">Tipo de Inmueble</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#transactionType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">Tipo de Transacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#isActive" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive">está activo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity">se refiere a entidad catastral</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
@@ -28,8 +38,8 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  <h2>Propiedades entre objetos</h2>
  <ul class="hlist">
   <li><a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity">se refiere a entidad catastral</a></li>
-  <li><a href="#propertyType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">tipo de inmueble</a></li>
-  <li><a href="#transactionType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">tipo de transacción</a></li>
+  <li><a href="#propertyType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">Tipo de Inmueble</a></li>
+  <li><a href="#transactionType" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">Tipo de Transacción</a></li>
  </ul>
  <div class="entity" id="refersToCadastralEntity">
   <h3>se refiere a entidad catastral<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
@@ -37,6 +47,14 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <div class="comment">
    <span class="markdown">Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty.</span>
   </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</a>
+   </dd>
+  </dl>
   <div class="description">
    <dl>
     <dt>
@@ -55,13 +73,25 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   </div>
  </div>
  <div class="entity" id="propertyType">
-  <h3>tipo de inmueble<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <h3>Tipo de Inmueble<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType</p>
   <div class="comment">
    <span class="markdown">Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español.</span>
   </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</a>
+   </dd>
+  </dl>
   <div class="description">
    <dl>
+    <dt>
+     tiene superpropiedades
+    </dt>
+    <dd></dd>
     <dt>
      dominio
     </dt>
@@ -78,13 +108,25 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   </div>
  </div>
  <div class="entity" id="transactionType">
-  <h3>tipo de transacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <h3>Tipo de Transacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType</p>
   <div class="comment">
    <span class="markdown">Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción.</span>
   </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</a>
+   </dd>
+  </dl>
   <div class="description">
    <dl>
+    <dt>
+     tiene superpropiedades
+    </dt>
+    <dd></dd>
     <dt>
      dominio
     </dt>
@@ -104,7 +146,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  <h3 id="dataproperties-headline" class="list">Propiedades de datos</h3>
  <ul class="hlist">
   <li><a href="#isActive" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive">está activo</a></li>
-  <li><a href="#http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier">identificador</a></li>
  </ul>
  <div class="entity" id="isActive">
   <h3>está activo<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
@@ -112,6 +153,14 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <div class="comment">
    <span class="markdown">Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso).</span>
   </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</a>
+   </dd>
+  </dl>
   <div class="description">
    <dl>
     <dt>
@@ -125,29 +174,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="http://purl.org/dc/terms/identifier">
-  <h3>identificador<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://purl.org/dc/terms/identifier</p>
-  <div class="comment">
-   <span class="markdown">Identificador único para el anuncio inmobiliario.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#RealEstateListing" title="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing">Anuncio Inmobiliario</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
     </dd>
    </dl>
   </div>

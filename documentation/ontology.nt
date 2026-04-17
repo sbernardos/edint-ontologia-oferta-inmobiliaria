@@ -1,24 +1,22 @@
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#versionIRI> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#imports> <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/created> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Daniel Doña"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Edna Ruckhaus" .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Lucía Sánchez" .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Maria del Socorro Bernardos" .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/creator> "Oscar Corcho" .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Integrates with the Spanish Cadastre ontology."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/description> "Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Se integra con la ontología del Catastro Español."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/hasFormat> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria.owl> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/issued> "2026-04-17"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/modified> "2026-04-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/modified> "2026-04-17"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/title> "Ontología de Oferta Inmobiliaria Española"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/dc/terms/title> "Spanish Real Estate Listing Ontology"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintinm" .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/" .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2000/01/rdf-schema#comment> "Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
 # 
 # 
@@ -29,12 +27,6 @@
 # #################################################################
 # 
 # 
-# http://creativecommons.org/ns#license
-<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://purl.org/dc/terms/created
 <http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
@@ -44,14 +36,17 @@
 # http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/dc/terms/license
 <http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/modified
 <http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/source
-<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -62,11 +57,8 @@
 # http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://www.w3.org/2002/07/owl#versionIRI
-<http://www.w3.org/2002/07/owl#versionIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2002/07/owl#versionInfo
-<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://www.w3.org/2002/07/owl#qualifiedCardinality
+<http://www.w3.org/2002/07/owl#qualifiedCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # 
 # 
@@ -89,43 +81,56 @@
 # #################################################################
 # 
 # 
+# _:genid-nodeid-node1jmddjsqex2
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/_:genid-nodeid-node1jmddjsqex2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# _:genid-nodeid-node1jmddjsqex3
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/_:genid-nodeid-node1jmddjsqex3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/_:genid-nodeid-node1jmddjsqex2> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#label> "property type"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#label> "tipo de inmueble"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#label> "Property Type"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType> <http://www.w3.org/2000/01/rdf-schema#label> "Tipo de Inmueble"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel> .
-<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel> .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#label> "refers to cadastral entity"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#label> "se refiere a entidad catastral"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/_:genid-nodeid-node1jmddjsqex3> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#label> "tipo de transacción"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#label> "transaction type"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#label> "Tipo de Transacción"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType> <http://www.w3.org/2000/01/rdf-schema#label> "Transaction Type"@en .
 # 
 # 
 # 
@@ -136,21 +141,13 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
-# http://purl.org/dc/terms/identifier
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Identificador único para el anuncio inmobiliario."@es .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Unique identifier for the real estate listing."@en .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identificador"@es .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating whether the real estate listing is currently active (true) or inactive (false)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#label> "está activo"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive> <http://www.w3.org/2000/01/rdf-schema#label> "is active"@en .
 # 
@@ -163,21 +160,23 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralParcel
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/identifier> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://org.semanticweb.owlapi/error#Error1> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#comment> "A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#comment> "Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/> .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#label> "Anuncio Inmobiliario"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing> <http://www.w3.org/2000/01/rdf-schema#label> "Real Estate Listing"@en .
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 # 
+_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
      xml:base="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"
-     xmlns:ns="http://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -12,24 +11,22 @@
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/">
         <owl:versionIRI rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/0.1.0"/>
         <owl:imports rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/catastro/"/>
-        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
-        <ns:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-14</terms:created>
         <terms:creator xml:lang="es">Daniel Doña</terms:creator>
         <terms:creator>Edna Ruckhaus</terms:creator>
         <terms:creator>Lucía Sánchez</terms:creator>
         <terms:creator>Maria del Socorro Bernardos</terms:creator>
         <terms:creator>Oscar Corcho</terms:creator>
-        <terms:description xml:lang="en">Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Reuses GeoSPARQL and integrates with the Spanish Cadastre ontology.</terms:description>
-        <terms:description xml:lang="es">Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Reutiliza GeoSPARQL y se integra con la ontología del Catastro Español.</terms:description>
+        <terms:description xml:lang="en">Ontology for modeling real estate listings in the Spanish context, including property offers (sale, rent, transfer). Integrates with the Spanish Cadastre ontology.</terms:description>
+        <terms:description xml:lang="es">Ontología para modelar ofertas inmobiliarias en el contexto español, incluyendo ofertas de inmuebles (venta, alquiler, traspaso). Se integra con la ontología del Catastro Español.</terms:description>
+        <terms:hasFormat rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria.owl"/>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-17</terms:issued>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-14</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-17</terms:modified>
         <terms:title xml:lang="es">Ontología de Oferta Inmobiliaria Española</terms:title>
         <terms:title xml:lang="en">Spanish Real Estate Listing Ontology</terms:title>
         <vann:preferredNamespacePrefix>edintinm</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</vann:preferredNamespaceUri>
-        <rdfs:comment xml:lang="en">Initial draft version focusing on the RealEstateListing class with its properties for property type, transaction type, and active status.</rdfs:comment>
-        <rdfs:comment xml:lang="es">Versión inicial centrada en la clase RealEstateListing con sus propiedades de tipo de inmueble, tipo de transacción y estado activo.</rdfs:comment>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/</vann:preferredNamespaceUri>
         <owl:versionInfo>0.1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -44,20 +41,6 @@
      -->
 
 
-    
-
-
-    <!-- http://creativecommons.org/ns#license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/contributor -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -82,6 +65,20 @@
     
 
 
+    <!-- http://purl.org/dc/terms/hasFormat -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/hasFormat"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
     <!-- http://purl.org/dc/terms/license -->
 
 
@@ -93,13 +90,6 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/source -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
     
 
 
@@ -124,17 +114,10 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#versionIRI -->
+    <!-- http://www.w3.org/2002/07/owl#qualifiedCardinality -->
 
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionIRI"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#qualifiedCardinality"/>
     
 
 
@@ -169,16 +152,36 @@
     
 
 
+    <!-- _:genid-nodeid-node1jmddjsqex2 -->
+
+
+    <owl:ObjectProperty rdf:about="_:genid-nodeid-node1jmddjsqex2"/>
+    
+
+
+    <!-- _:genid-nodeid-node1jmddjsqex3 -->
+
+
+    <owl:ObjectProperty rdf:about="_:genid-nodeid-node1jmddjsqex3"/>
+    
+
+
     <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType -->
 
 
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/propertyType">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="_:genid-nodeid-node1jmddjsqex2"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Property indicating the type of real estate property in the listing (e.g., local, office, warehouse, dwelling, plot). Reuses the Spanish Cadastre use vocabulary.</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica el tipo de inmueble en el anuncio (ej. local, oficina, nave, vivienda, solar). Reutiliza el vocabulario de usos del Catastro Español.</rdfs:comment>
-        <rdfs:label xml:lang="en">property type</rdfs:label>
-        <rdfs:label xml:lang="es">tipo de inmueble</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"/>
+        <rdfs:label xml:lang="en">Property Type</rdfs:label>
+        <rdfs:label xml:lang="es">Tipo de Inmueble</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -198,6 +201,7 @@
         </rdfs:range>
         <rdfs:comment xml:lang="es">Relación que vincula un anuncio inmobiliario con su entidad catastral correspondiente (parcela o inmueble). Esto permite acceder a información catastral como el uso, la clase, la dirección y la referencia a través de la ontología del Catastro. Para ventas de solo terreno, se enlaza a una CadastralParcel. Para edificios o unidades, se enlaza a una CadastralProperty.</rdfs:comment>
         <rdfs:comment xml:lang="en">Relationship linking a real estate listing to its corresponding cadastral entity (parcel or property). This allows access to cadastral information such as use, class, address, and reference through the Cadastre ontology. For land-only sales, it links to a CadastralParcel. For buildings or units, it links to a CadastralProperty.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"/>
         <rdfs:label xml:lang="en">refers to cadastral entity</rdfs:label>
         <rdfs:label xml:lang="es">se refiere a entidad catastral</rdfs:label>
     </owl:ObjectProperty>
@@ -208,12 +212,18 @@
 
 
     <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/transactionType">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="_:genid-nodeid-node1jmddjsqex3"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
         <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Property indicating type of real estate transaction (sale, rent, or transfer). Uses the transaction type controlled vocabulary.</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica el tipo de transacción inmobiliaria (venta, alquiler o traspaso). Utiliza el vocabulario controlado de tipos de transacción.</rdfs:comment>
-        <rdfs:label xml:lang="es">tipo de transacción</rdfs:label>
-        <rdfs:label xml:lang="en">transaction type</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"/>
+        <rdfs:label xml:lang="es">Tipo de Transacción</rdfs:label>
+        <rdfs:label xml:lang="en">Transaction Type</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -230,20 +240,6 @@
     
 
 
-    <!-- http://purl.org/dc/terms/identifier -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
-        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="es">Identificador único para el anuncio inmobiliario.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Unique identifier for the real estate listing.</rdfs:comment>
-        <rdfs:label xml:lang="es">identificador</rdfs:label>
-        <rdfs:label xml:lang="en">identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/isActive -->
 
 
@@ -252,6 +248,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">Property indicating whether the real estate listing is currently active (true) or inactive (false).</rdfs:comment>
         <rdfs:comment xml:lang="es">Propiedad que indica si el anuncio inmobiliario está actualmente activo (verdadero) o inactivo (falso).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"/>
         <rdfs:label xml:lang="es">está activo</rdfs:label>
         <rdfs:label xml:lang="en">is active</rdfs:label>
     </owl:DatatypeProperty>
@@ -267,6 +264,13 @@
      -->
 
 
+    
+
+
+    <!-- http://org.semanticweb.owlapi/error#Error1 -->
+
+
+    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
     
 
 
@@ -288,14 +292,10 @@
 
 
     <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/RealEstateListing">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
         <rdfs:comment xml:lang="en">A real estate listing representing an offer for a property (sale, rent, or transfer). Each listing has a unique identifier and describes the property type, transaction type, and current status.</rdfs:comment>
         <rdfs:comment xml:lang="es">Un anuncio inmobiliario que representa una oferta de un inmueble (venta, alquiler o traspaso). Cada anuncio tiene un identificador único y describe el tipo de inmueble, tipo de transacción y estado actual.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/"/>
         <rdfs:label xml:lang="es">Anuncio Inmobiliario</rdfs:label>
         <rdfs:label xml:lang="en">Real Estate Listing</rdfs:label>
     </owl:Class>
@@ -306,6 +306,9 @@
 
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:Description>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </rdf:Description>
 </rdf:RDF>
 
 
