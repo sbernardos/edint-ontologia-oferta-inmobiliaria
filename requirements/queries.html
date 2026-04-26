@@ -3,7 +3,7 @@
     <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Documentación SPARQL - Censo Vehículos</title>
+        <title>Documentación SPARQL - Oferta Inmobiliaria</title>
         <style>
             /* Reset y Estructura Base */
             body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; display: flex; height: 100vh; background-color: #fcfcfc; color: #333; }
@@ -187,10 +187,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <body>
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>Censo Vehículos</h2>
+                <h2>Oferta inmobiliaria</h2>
             </div>
             <ul>
-    <li><a href="#CQ01_sparql">CQ01.sparql</a></li><li><a href="#CQ02_sparql">CQ02.sparql</a></li><li><a href="#CQ03_sparql">CQ03.sparql</a></li><li><a href="#CQ04_sparql">CQ04.sparql</a></li><li><a href="#CQ05_sparql">CQ05.sparql</a></li><li><a href="#CQ06_sparql">CQ06.sparql</a></li><li><a href="#CQ07_sparql">CQ07.sparql</a></li>
+    <li><a href="#CQ01_sparql">INM01.sparql</a></li><li><a href="#CQ02_sparql">INM02.sparql</a></li><li><a href="#CQ03_sparql">INM03.sparql</a></li><li><a href="#CQ04_sparql">INM04.sparql</a></li><li><a href="#CQ05_sparql">INM05.sparql</a></li><li><a href="#CQ06_sparql">INM06.sparql</a></li><li><a href="#CQ07_sparql">INM07.sparql</a></li>
             </ul>
         </div>
         <div class="main-content">
@@ -198,7 +198,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-<span class="c"># CQ01: What types of real estate transactions exist in the listings?</span>
+<span class="c"># INM01: What types of real estate transactions exist in the listings?</span>
 <span class="c"># SPANISH: ¿Qué tipos de transacción inmobiliaria existen en los anuncios?</span>
 
 <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?transactionType</span> <span class="nv">?transactionLabel</span> <span class="nv">?transactionLabelEs</span>
@@ -223,7 +223,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">dcterms</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/dc/terms/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-<span class="c"># CQ02: What information is contained in a real estate listing?</span>
+<span class="c"># INM02: What information is contained in a real estate listing?</span>
 <span class="c"># SPANISH: ¿Qué información contiene un anuncio inmobiliario?</span>
 
 <span class="k">SELECT</span> <span class="nv">?listing</span> <span class="nv">?listingId</span> <span class="nv">?isActive</span> <span class="nv">?propertyTypeLabelEs</span> <span class="nv">?transactionTypeLabelEs</span>
@@ -251,7 +251,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">dcterms</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/dc/terms/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-<span class="c"># CQ03: How is a listing related to a cadastral entity?</span>
+<span class="c"># INM03: How is a listing related to a cadastral entity?</span>
 <span class="c"># SPANISH: ¿Cómo se relaciona un anuncio con una entidad catastral?</span>
 
 <span class="k">SELECT</span> <span class="nv">?listing</span> <span class="nv">?listingId</span> <span class="nv">?cadastralEntity</span> <span class="nv">?entityType</span> <span class="nv">?entityLabelEs</span>
@@ -279,7 +279,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-<span class="c"># CQ04: What properties does a property have in a sale listing?</span>
+<span class="c"># INM04: What properties does a property have in a sale listing?</span>
 <span class="c"># SPANISH: ¿Qué propiedades tiene un inmueble en venta?</span>
 
 <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?listing</span> <span class="nv">?listingId</span> <span class="nv">?propertyType</span> <span class="nv">?propertyLabelEs</span> <span class="nv">?propertyTypeLabelEs</span>
@@ -308,7 +308,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div></section><section class="file-card" id="CQ05_sparql"><div class="file-header">CQ05.sparql</div><div class="query-block"><div class="sparql-code"><pre><span></span><span class="k">PREFIX</span> <span class="nn">edintinm</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">dcterms</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/dc/terms/&gt;</span>
 
-<span class="c"># CQ05: What is the current status of a real estate listing?</span>
+<span class="c"># INM05: What is the current status of a real estate listing?</span>
 <span class="c"># SPANISH: ¿Cuál es el estado actual de un anuncio inmobiliario?</span>
 
 <span class="k">SELECT</span> <span class="nv">?listing</span> <span class="nv">?listingId</span> <span class="nv">?isActive</span> <span class="nv">?statusLabel</span>
@@ -330,7 +330,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">skos</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
-<span class="c"># CQ06: What types of properties can be advertised?</span>
+<span class="c"># INM06: What types of properties can be advertised?</span>
 <span class="c"># SPANISH: ¿Qué tipos de inmuebles se pueden anunciar?</span>
 
 <span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?propertyType</span> <span class="nv">?propertyLabel</span> <span class="nv">?propertyLabelEs</span> <span class="nv">?propertyPrefLabelEs</span>
@@ -361,7 +361,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="k">PREFIX</span> <span class="nn">geo</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">catastro</span><span class="p">:</span> <span class="nl">&lt;https://edint.github.io/edint-ontologia-catastro/ontology/catastro#&gt;</span>
 
-<span class="c"># CQ07: How is the location of a property specified?</span>
+<span class="c"># INM07: How is the location of a property specified?</span>
 <span class="c"># SPANISH: ¿Cómo se especifica la ubicación de un inmueble?</span>
 
 <span class="k">SELECT</span> <span class="nv">?listing</span> <span class="nv">?listingId</span> <span class="nv">?cadastralEntity</span> <span class="nv">?hasGeometry</span> <span class="nv">?wktCoordinate</span> <span class="nv">?address</span>

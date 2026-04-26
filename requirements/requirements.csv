@@ -1,8 +1,15 @@
-identifier,status,responsible,priority,competency_question,ontology_classes,ontology_properties,related_kos,sparql_file,description
-REQ001,in_progress,dani_dona,high,What types of real estate transactions exist in the listings?,edintinm:RealEstateListing,edintinm:transactionType,http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type,CQ01,Retrieve all distinct transaction types available in the ontology
-REQ002,in_progress,dani_dona,high,What information is contained in a real estate listing?,edintinm:RealEstateListing,edintinm:propertyType,http://vocab.linkeddata.es/datosabiertos/kos/edint/uso,CQ02,Query all properties and attributes of real estate listings
-REQ003,in_progress,dani_dona,high,How is a listing related to a cadastral entity?,edintinm:RealEstateListing,edintinm:refersToCadastralEntity,edint-ontologia-catastro,CQ03,Find cadastral entities referenced by real estate listings
-REQ004,in_progress,dani_dona,high,What properties does a property have in a sale listing?,edintinm:RealEstateListing,edintinm:propertyType,http://vocab.linkeddata.es/datosabiertos/kos/edint/uso,CQ04,Query properties with specific transaction type (sale)
-REQ005,in_progress,dani_dona,high,What is the current status of a real estate listing?,edintinm:RealEstateListing,edintinm:isActive,dcterms:identifier,CQ05,Check status of real estate listings (active/inactive)
-REQ006,in_progress,dani_dona,high,What types of properties can be advertised?,edintinm:RealEstateListing,edintinm:propertyType,http://vocab.linkeddata.es/datosabiertos/kos/edint/uso,CQ06,Retrieve all property types used in listings
-REQ007,in_progress,dani_dona,high,How is the location of a property specified?,edintinm:RealEstateListing,geo:hasGeometry,geo:asWKT,CQ07,Query geographic location of properties in listings
+identifier;status;responsible;priority;competency_question;ontology_classes;ontology_properties;related_kos;sparql_file;description
+INM01;Proposed;UPM;high;"What types of real estate transactions exist in the listings?
+¿Qué tipos de transacción inmobiliaria existen en los anuncios?";edintinm:RealEstateListing;edintinm:transactionType;http://vocab.linkeddata.es/datosabiertos/kos/edint/transaction-type;CQ01;Retrieve all distinct transaction types available in the ontology
+INM02;Proposed;UPM;high;"What information is contained in a real estate listing?
+¿Qué información contiene un anuncio inmobiliario?";edintinm:RealEstateListing;edintinm:propertyType;http://vocab.linkeddata.es/datosabiertos/kos/edint/uso;CQ02;Query all properties and attributes of real estate listings
+INM03;Proposed;UPM;high;"How is a listing related to a cadastral entity?
+¿Cómo se relaciona un anuncio con una entidad catastral?";edintinm:RealEstateListing;edintinm:refersToCadastralEntity;edint-ontologia-catastro;CQ03;Find cadastral entities referenced by real estate listings
+INM04;Proposed;UPM;high;"What properties does a property have in a sale listing?
+¿Qué propiedades tiene un inmueble en venta?";edintinm:RealEstateListing;edintinm:propertyType;http://vocab.linkeddata.es/datosabiertos/kos/edint/uso;CQ04;Query properties with specific transaction type (sale)
+INM05;Proposed;UPM;high;"What is the current status of a real estate listing?
+¿Cuál es el estado actual de un anuncio inmobiliario?";edintinm:RealEstateListing;edintinm:isActive;dcterms:identifier;CQ05;Check status of real estate listings (active/inactive)
+INM06;Proposed;UPM;high;"What types of properties can be advertised?
+¿Qué tipos de inmuebles se pueden anunciar?";edintinm:RealEstateListing;edintinm:propertyType;http://vocab.linkeddata.es/datosabiertos/kos/edint/uso;CQ06;Retrieve all property types used in listings
+INM07;Proposed;UPM;high;"How is the location of a property specified?
+¿Cómo se especifica la ubicación de un inmueble?";edintinm:RealEstateListing;geo:hasGeometry;geo:asWKT;CQ07;Query geographic location of properties in listings
