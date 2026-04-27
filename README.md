@@ -14,7 +14,7 @@ El prefijo de esta ontología es `edintinm`. Se publica en el espacio de nombres
 
 # Modelo conceptual (Ontology conceptualization)
 
-![Diagrama del modelo conceptual](diagrams/diagrama-inmobiliaria.drawio.png)
+![Diagrama del modelo conceptual](diagrams/diagrama.png)
 
 # Estructura del repositorio (Repository structure)
 
