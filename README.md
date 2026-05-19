@@ -4,11 +4,11 @@ Esta ontología permite representar el dominio de las ofertas inmobiliarias en e
 
 Está siendo desarrollada en el contexto del Espacio de Datos para las Infraestructuras Urbanas Inteligentes ([EDINT](https://edint.es)).
 
-# Propósito y alcance de la ontología
+# Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
 El propósito de esta ontología es modelar las ofertas inmobiliarias en el contexto español para habilitar la interoperabilidad de datos en el ámbito de la oferta inmobiliaria. El alcance se limita a anuncios inmobiliarios, tipos de inmueble, tipos de transacción y su relación con entidades catastrales. Quedan fuera del alcance aspectos como valoración de inmuebles, procesos de intermediación, contratos y datos financieros.
 
-# Prefijo y espacio de nombres
+# Prefijo y espacio de nombres (Prefix and namespace)
 
 El prefijo de esta ontología es `edintinm`. Se publica en el espacio de nombres: http://vocab.linkeddata.es/datosabiertos/def/oferta-inmobiliaria/
 
